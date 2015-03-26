@@ -6,4 +6,4 @@ import android.content.Intent
 /**
  * @author pawegio
  */
-public inline fun Intent<reified T>(context: Context): Intent = Intent(context, javaClass<T>())
+public inline fun IntentFor<reified T>(context: Context): Intent = Intent(context, javaClass<T>())

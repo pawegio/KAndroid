@@ -9,9 +9,9 @@ repositories {
 }
 
 group = 'com.pawegio.kandroid'
-version = '0.1.0'
-def siteUrl = 'https://github.com/pawegio/kandroid'
-def gitUrl = 'https://github.com/pawegio/kandroid.git'
+version = '0.1.4'
+def siteUrl = 'https://github.com/pawegio/KAndroid'
+def gitUrl = 'https://github.com/pawegio/KAndroid.git'
 
 
 android {
@@ -72,8 +72,7 @@ dependencies {
 }
 
 task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.sourceFiles
-    classifier = 'sources'
+    from "$buildDir/intermediates/classes/release/"
 }
 
 task javadoc(type: Javadoc) {
