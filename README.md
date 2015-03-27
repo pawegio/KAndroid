@@ -1,6 +1,8 @@
 [ ![Download](https://api.bintray.com/packages/pawegio/maven/com.pawegio.kandroid%3Akandroid/images/download.svg) ](https://bintray.com/pawegio/maven/com.pawegio.kandroid%3Akandroid/_latestVersion)
 
 # KAndroid
+<img src="art/logo.png" width="160px">
+
 Kotlin library for Android
 
 Download
