@@ -9,9 +9,7 @@ Download
 Download latest version with Gradle:
 ```groovy
 repositories {
-    maven { 
-        url 'http://dl.bintray.com/pawegio/maven'
-    }
+    jcenter()
 }
 
 dependencies {
