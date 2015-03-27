@@ -26,6 +26,11 @@ Usage
 // instead of findViewById(R.id.textView) as TextView
 val textView = findView<TextView>(R.id.textView)
 ```
+#### Accessing Activity methods from Fragment
+```kotlin
+// instead of (getActivity() as SampleActivity).foo()
+getActivity<SampleActivity>().foo()
+```
 #### Using system services
 ```kotlin
 // instead of getSystemService(Context.WINDOW_SERVICE) as WindowManager
