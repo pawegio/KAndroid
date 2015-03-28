@@ -9,7 +9,7 @@ repositories {
 }
 
 group = 'com.pawegio.kandroid'
-version = '0.1.6'
+version = '0.1.7'
 def siteUrl = 'https://github.com/pawegio/KAndroid'
 def gitUrl = 'https://github.com/pawegio/KAndroid.git'
 
