@@ -3,3 +3,4 @@ build/
 local.properties
 *.iml
 *.log
+.gradle/
