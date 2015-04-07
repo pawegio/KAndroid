@@ -79,21 +79,21 @@ runAsync {
 }
 
 // delayed run (e.g. after 1000 millis)
-// equals Handler().postDelayed(Runnable(action), delayMillis)
+// equals Handler().postDelayed(Runnable { /* delayed execution */ }, delayMillis)
 runDelayed(1000) {
     // delayed execution
 }
 
 // run on Main Thread outside Activity
-// equals Handler(Looper.getMainLooper()).post(Runnable(action))
+// equals Handler(Looper.getMainLooper()).post(Runnable { /* UI update */ })
 runOnUiThread {
     // UI update
 }
 
 // delayed run on Main Thread
-// equals Handler(Looper.getMainLooper()).postDelayed(Runnable(action), delayMillis)
+// equals Handler(Looper.getMainLooper()).postDelayed(Runnable { /* delayed UI update */ }, delayMillis)
 runDelayedOnUiThread(5000) {
-    // sample delayed UI update
+    // delayed UI update
 }
 ```
 #### More
