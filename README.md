@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.7@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.8@aar'
 }
 ```
 
@@ -76,6 +76,24 @@ v("CustomTag", "Verbose log message with custom tag")
 // instead of Thread(Runnable { /* long execution */ }).start()
 runAsync {
     // long execution
+}
+
+// delayed run (e.g. after 1000 millis)
+// equals Handler().postDelayed(Runnable(action), delayMillis)
+runDelayed(1000) {
+    // delayed execution
+}
+
+// run on Main Thread outside Activity
+// equals Handler(Looper.getMainLooper()).post(Runnable(action))
+runOnUiThread {
+    // UI update
+}
+
+// delayed run on Main Thread
+// equals Handler(Looper.getMainLooper()).postDelayed(Runnable(action), delayMillis)
+runDelayedOnUiThread(5000) {
+    // sample delayed UI update
 }
 ```
 #### More
