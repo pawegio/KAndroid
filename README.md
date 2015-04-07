@@ -51,9 +51,9 @@ shortToast("Hi, I'm short one!")
 #### Layout inflater
 ```kotlin
 // instead of LayoutInflater.from(context).inflate(R.layout.some_layout, null, false)
-inflateLayout(R.layout.some_layout)
+context.inflateLayout(R.layout.some_layout)
 // or
-inflateLayout(R.layout.some_layout, attachToRoot = true)
+context.inflateLayout(R.layout.some_layout, attachToRoot = true)
 ```
 #### Using Intents
 ```kotlin
