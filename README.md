@@ -1,4 +1,4 @@
-[ ![Download](https://api.bintray.com/packages/pawegio/maven/com.pawegio.kandroid%3Akandroid/images/download.svg) ](https://bintray.com/pawegio/maven/com.pawegio.kandroid%3Akandroid/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/pawegio/maven/com.pawegio.kandroid%3Akandroid/images/download.svg) ](https://bintray.com/pawegio/maven/com.pawegio.kandroid%3Akandroid/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-KAndroid-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1705)
 
 # KAndroid
 <img src="art/logo.png" width="160px">
@@ -51,9 +51,9 @@ shortToast("Hi, I'm short one!")
 #### Layout inflater
 ```kotlin
 // instead of LayoutInflater.from(context).inflate(R.layout.some_layout, null, false)
-inflateLayout(R.layout.some_layout)
+context.inflateLayout(R.layout.some_layout)
 // or
-inflateLayout(R.layout.some_layout, attachToRoot = true)
+context.inflateLayout(R.layout.some_layout, attachToRoot = true)
 ```
 #### Using Intents
 ```kotlin
