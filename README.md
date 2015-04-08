@@ -62,7 +62,7 @@ val intent = IntentFor<SampleActivity>(this)
 ```
 #### Logging
 ```kotlin
-// using javaClass.getName() as a TAG
+// using javaClass.getSimpleName() as a TAG
 v("Verbose log message")
 d("Debug log message")
 i("Info log message")
