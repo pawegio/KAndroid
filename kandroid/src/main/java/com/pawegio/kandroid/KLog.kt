@@ -45,4 +45,4 @@ public fun Any.e(msg: String) {
     Log.e(getTag(), msg)
 }
 
-private fun Any.getTag() = javaClass.getName()
+private fun Any.getTag() = javaClass.getSimpleName()
