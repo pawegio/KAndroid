@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.9@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.10@aar'
 }
 ```
 
@@ -25,6 +25,34 @@ Usage
 ```kotlin
 // instead of findViewById(R.id.textView) as TextView
 val textView = findView<TextView>(R.id.textView)
+```
+#### SearchView extensions
+```kotlin
+/* instead of:
+searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+    override fun onQueryTextChange(q: String): Boolean {
+        update(q)
+        return false
+    }
+    
+    override fun onQueryTextSubmit(q: String): Boolean {
+        return false
+    }
+}) */
+searchView.onQueryChange { query -> update(query) }
+
+/* instead of:
+searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+    override fun onQueryTextChange(q: String): Boolean {
+        return false
+    }
+    
+    override fun onQueryTextSubmit(q: String): Boolean {
+        update(q)
+        return false
+    }
+}) */
+searchView.onQuerySubmit { query -> update(query) }
 ```
 #### Accessing Activity methods from Fragment
 ```kotlin
