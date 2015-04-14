@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.10@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.11@aar'
 }
 ```
 
@@ -24,7 +24,7 @@ Usage
 #### Binding views
 ```kotlin
 // instead of findViewById(R.id.textView) as TextView
-val textView = findView<TextView>(R.id.textView)
+val textView = find<TextView>(R.id.textView)
 ```
 #### SearchView extensions
 ```kotlin
@@ -74,7 +74,7 @@ getUserManager()
 #### Toast messages
 ```kotlin
 longToast("I'm long toast message!")
-shortToast("Hi, I'm short one!")
+toast("Hi, I'm short one!")
 ```
 #### Layout inflater
 ```kotlin
