@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.11@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.12@aar'
 }
 ```
 
@@ -96,6 +96,7 @@ d("Debug log message")
 i("Info log message")
 w("Warn log message")
 e("Error log message")
+wtf("WTF log message")
 // or with custom TAG
 v("CustomTag", "Verbose log message with custom tag") 
 ```

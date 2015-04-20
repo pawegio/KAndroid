@@ -25,6 +25,10 @@ public fun Any.e(tag: String, msg: String) {
     Log.e(tag, msg)
 }
 
+public fun Any.wtf(tag: String, msg: String) {
+    Log.wtf(tag, msg)
+}
+
 public fun Any.v(msg: String) {
     Log.v(getTag(), msg)
 }
@@ -43,6 +47,10 @@ public fun Any.w(msg: String) {
 
 public fun Any.e(msg: String) {
     Log.e(getTag(), msg)
+}
+
+public fun Any.wtf(msg: String) {
+    Log.wtf(getTag(), msg)
 }
 
 private fun Any.getTag() = javaClass.getSimpleName()
