@@ -9,6 +9,7 @@ import android.bluetooth.BluetoothManager
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.RestrictionsManager
+import android.content.SharedPreferences
 import android.content.pm.LauncherApps
 import android.hardware.ConsumerIrManager
 import android.hardware.SensorManager
@@ -29,6 +30,7 @@ import android.net.wifi.p2p.WifiP2pManager
 import android.nfc.NfcManager
 import android.os.*
 import android.os.storage.StorageManager
+import android.preference.PreferenceManager
 import android.print.PrintManager
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
@@ -144,3 +146,5 @@ public fun Context.getWifiP2pManager(): WifiP2pManager = getSystemService(Contex
 public fun Context.getWifiManager(): WifiManager = getSystemService(Context.WIFI_SERVICE) as WifiManager
 
 public fun Context.getWindowManager(): WindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+
+public fun Context.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
