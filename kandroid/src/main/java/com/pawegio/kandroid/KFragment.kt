@@ -15,21 +15,15 @@ public fun Fragment.getActivity<T : Activity>(): T = getActivity() as T
 
 public fun Fragment.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity())
 
-public fun Fragment.toast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show()
+public fun Fragment.toast(text: CharSequence): Unit = getActivity().toast(text)
 
-public fun Fragment.longToast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show()
-
-deprecated("Use Fragment.toast() instead")
-public fun Fragment.shortToast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show()
+public fun Fragment.longToast(text: CharSequence): Unit = getActivity().longToast(text)
 
 suppress("UNCHECKED_CAST")
 public fun SupportFragment.getActivity<T : Activity>(): T = getActivity() as T
 
 public fun SupportFragment.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity())
 
-public fun SupportFragment.toast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show()
+public fun SupportFragment.toast(text: CharSequence): Unit = getActivity().toast(text)
 
-public fun SupportFragment.longToast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show()
-
-deprecated("Use Fragment.toast() instead")
-public fun SupportFragment.shortToast(text: CharSequence): Unit = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show()
+public fun SupportFragment.longToast(text: CharSequence): Unit = getActivity().longToast(text)
