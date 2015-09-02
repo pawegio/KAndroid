@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.14@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.15@aar'
 }
 ```
 
@@ -71,7 +71,9 @@ seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
     }
 
 }) */
-seekBar.onProgressChanged { progress -> mediaPlayer.seekTo(progress) }
+seekBar.onProgressChanged { progress, fromUser -> 
+    if (fromUser) mediaPlayer.seekTo(progress) 
+}
 ```
 #### Accessing Activity methods from Fragment
 ```kotlin
