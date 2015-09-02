@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.13@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.14@aar'
 }
 ```
 
@@ -53,6 +53,25 @@ searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
     }
 }) */
 searchView.onQuerySubmit { query -> update(query) }
+```
+#### SeekBar extension
+```kotlin
+/* instead of:
+seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+    override fun onStopTrackingTouch(seekBar: SeekBar) {
+
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+    }
+
+    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+        mediaPlayer.seekTo(progress)
+    }
+
+}) */
+seekBar.onProgressChanged { progress -> mediaPlayer.seekTo(progress) }
 ```
 #### Accessing Activity methods from Fragment
 ```kotlin

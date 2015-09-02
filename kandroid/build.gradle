@@ -9,18 +9,18 @@ repositories {
 }
 
 group = 'com.pawegio.kandroid'
-version = '0.1.13'
+version = '0.1.14'
 def siteUrl = 'https://github.com/pawegio/KAndroid'
 def gitUrl = 'https://github.com/pawegio/KAndroid.git'
 
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion "22.0.1"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionCode 1
         versionName version
     }
@@ -67,7 +67,7 @@ install {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:23.0.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
