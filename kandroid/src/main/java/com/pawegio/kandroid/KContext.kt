@@ -148,3 +148,7 @@ public fun Context.getWifiManager(): WifiManager = getSystemService(Context.WIFI
 public fun Context.getWindowManager(): WindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
 public fun Context.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+
+public inline fun Context.startActivity<reified T>() {
+        startActivity(IntentFor<T>(this))
+}
