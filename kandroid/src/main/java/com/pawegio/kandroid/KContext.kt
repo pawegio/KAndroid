@@ -150,5 +150,5 @@ public fun Context.getWindowManager(): WindowManager = getSystemService(Context.
 public fun Context.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
 public inline fun Context.startActivity<reified T>() {
-        startActivity(IntentFor<T>(this))
+    startActivity(IntentFor<T>(this))
 }

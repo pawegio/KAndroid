@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.16@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.1.17@aar'
 }
 ```
 
@@ -110,6 +110,8 @@ context.inflateLayout(R.layout.some_layout, attachToRoot = true)
 val intent = IntentFor<SampleActivity>(this)
 // instead of startActivity(Intent(this, javaClass<SampleActivity>()))
 startActivity<SampleActivity>()
+// instead of startActivityForResult(Intent(this, javaClass<SampleActivity>()), REQUEST_CODE)
+startActivityForResult<SampleActivity>(REQUEST_CODE)
 ```
 #### Logging
 ```kotlin
