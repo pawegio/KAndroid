@@ -152,6 +152,11 @@ runDelayedOnUiThread(5000) {
 ```
 #### More
 Under development so expect soon.
+Apps using KAndroid
+-------
+(contact me or create new pull request to add your apps)
+* [Recorder](https://play.google.com/store/apps/details?id=com.pawegio.recandsave)
+
 License
 -------
 
