@@ -53,4 +53,4 @@ public fun Any.wtf(msg: String) {
     Log.wtf(getTag(), msg)
 }
 
-private fun Any.getTag() = javaClass.getSimpleName()
+private fun Any.getTag() = javaClass.simpleName

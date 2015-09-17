@@ -3,7 +3,7 @@
 # KAndroid
 <img src="art/logo.png" width="160px">
 
-Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin M12** build.
+Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin M13** build.
 
 Download
 --------
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.1.17@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.2.0@aar'
 }
 ```
 
@@ -74,11 +74,6 @@ seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 seekBar.onProgressChanged { progress, fromUser -> 
     if (fromUser) mediaPlayer.seekTo(progress) 
 }
-```
-#### Accessing Activity methods from Fragment
-```kotlin
-// instead of (getActivity() as SampleActivity).foo()
-getActivity<SampleActivity>().foo()
 ```
 #### Using system services
 ```kotlin
