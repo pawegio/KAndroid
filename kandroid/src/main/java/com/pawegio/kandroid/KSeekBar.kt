@@ -5,7 +5,7 @@ import android.widget.SeekBar
 /**
  * @author pawegio
  */
-public fun SeekBar.onProgressChanged(callback: (Int, Boolean) -> Unit) {
+fun SeekBar.onProgressChanged(callback: (Int, Boolean) -> Unit) {
     setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
         override fun onStopTrackingTouch(seekBar: SeekBar) {
 

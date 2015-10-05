@@ -6,7 +6,7 @@ import android.support.v7.widget.SearchView as SupportSearchView
 /**
  * @author pawegio
  */
-public fun SearchView.onQueryChange(query: (String) -> Unit) {
+fun SearchView.onQueryChange(query: (String) -> Unit) {
     setOnQueryTextListener(object : SearchView.OnQueryTextListener {
         override fun onQueryTextChange(q: String): Boolean {
             query(q)
@@ -19,7 +19,7 @@ public fun SearchView.onQueryChange(query: (String) -> Unit) {
     })
 }
 
-public fun SearchView.onQuerySubmit(query: (String) -> Unit) {
+fun SearchView.onQuerySubmit(query: (String) -> Unit) {
     setOnQueryTextListener(object : SearchView.OnQueryTextListener {
         override fun onQueryTextChange(q: String): Boolean {
             return false
@@ -32,7 +32,7 @@ public fun SearchView.onQuerySubmit(query: (String) -> Unit) {
     })
 }
 
-public fun SupportSearchView.onQueryChange(query: (String) -> Unit) {
+fun SupportSearchView.onQueryChange(query: (String) -> Unit) {
     setOnQueryTextListener(object : SupportSearchView.OnQueryTextListener {
         override fun onQueryTextChange(q: String): Boolean {
             query(q)
@@ -45,7 +45,7 @@ public fun SupportSearchView.onQueryChange(query: (String) -> Unit) {
     })
 }
 
-public fun SupportSearchView.onQuerySubmit(query: (String) -> Unit) {
+fun SupportSearchView.onQuerySubmit(query: (String) -> Unit) {
     setOnQueryTextListener(object : SupportSearchView.OnQueryTextListener {
         override fun onQueryTextChange(q: String): Boolean {
             return false

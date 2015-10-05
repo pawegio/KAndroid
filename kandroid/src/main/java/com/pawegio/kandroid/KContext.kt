@@ -46,109 +46,159 @@ import android.view.textservice.TextServicesManager
 /**
  * @author pawegio
  */
-public fun Context.inflateLayout(layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View
+fun Context.inflateLayout(layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View
         = LayoutInflater.from(this).inflate(layoutResId, parent, attachToRoot)
 
-public fun Context.getAccessibilityManager(): AccessibilityManager = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
+val Context.accessibilityManager: AccessibilityManager
+        get() = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
 
-public fun Context.getAccountManager(): AccountManager = getSystemService(Context.ACCOUNT_SERVICE) as AccountManager
+val Context.accountManager: AccountManager
+        get() = getSystemService(Context.ACCOUNT_SERVICE) as AccountManager
 
-public fun Context.getActivityManager(): ActivityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+val Context.activityManager: ActivityManager
+        get() = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
 
-public fun Context.getAlarmManager(): AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+val Context.alarmManager: AlarmManager
+        get() = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-public fun Context.getAppWidgetManager(): AppWidgetManager = getSystemService(Context.APPWIDGET_SERVICE) as AppWidgetManager
+val Context.appWidgetManager: AppWidgetManager
+        get() = getSystemService(Context.APPWIDGET_SERVICE) as AppWidgetManager
 
-public fun Context.getAppOpsManager(): AppOpsManager = getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
+val Context.appOpsManager: AppOpsManager
+        get() = getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
 
-public fun Context.getAudioManager(): AudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+val Context.audioManager: AudioManager
+        get() = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
-public fun Context.getBatteryManager(): BatteryManager = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+val Context.batteryManager: BatteryManager
+        get() = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
 
-public fun Context.getBluetoothManager(): BluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+val Context.bluetoothManager: BluetoothManager
+        get() = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
 
-public fun Context.getCameraManager(): CameraManager = getSystemService(Context.CAMERA_SERVICE) as CameraManager
+val Context.cameraManager: CameraManager
+        get() = getSystemService(Context.CAMERA_SERVICE) as CameraManager
 
-public fun Context.getCaptioningManager(): CaptioningManager = getSystemService(Context.CAPTIONING_SERVICE) as CaptioningManager
+val Context.captioningManager: CaptioningManager
+        get() = getSystemService(Context.CAPTIONING_SERVICE) as CaptioningManager
 
-public fun Context.getClipboardManager(): ClipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+val Context.clipboardManager: ClipboardManager
+        get() = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 
-public fun Context.getConnectivityManager(): ConnectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+val Context.connectivityManager: ConnectivityManager
+        get() = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
-public fun Context.getConsumerIrManager(): ConsumerIrManager = getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
+val Context.consumerIrManager: ConsumerIrManager
+        get() = getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
 
-public fun Context.getDevicePolicyManager(): DevicePolicyManager = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
+val Context.devicePolicyManager: DevicePolicyManager
+        get() = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
 
-public fun Context.getDisplayManager(): DisplayManager = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
+val Context.displayManager: DisplayManager
+        get() = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
 
-public fun Context.getDownloadManager(): DownloadManager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+val Context.downloadManager: DownloadManager
+        get() = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
 
-public fun Context.getDropBoxManager(): DropBoxManager = getSystemService(Context.DROPBOX_SERVICE) as DropBoxManager
+val Context.dropBoxManager: DropBoxManager
+        get() = getSystemService(Context.DROPBOX_SERVICE) as DropBoxManager
 
-public fun Context.getInputMethodManager(): InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+val Context.inputMethodManager: InputMethodManager
+        get() = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
-public fun Context.getInputManager(): InputManager = getSystemService(Context.INPUT_SERVICE) as InputManager
+val Context.inputManager: InputManager
+        get() = getSystemService(Context.INPUT_SERVICE) as InputManager
 
-public fun Context.getJobScheduler(): JobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+val Context.jobScheduler: JobScheduler
+        get() = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
 
-public fun Context.getKeyguardManager(): KeyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+val Context.keyguardManager: KeyguardManager
+        get() = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
 
-public fun Context.getLauncherApps(): LauncherApps = getSystemService(Context.LAUNCHER_APPS_SERVICE) as LauncherApps
+val Context.launcherApps: LauncherApps
+        get() = getSystemService(Context.LAUNCHER_APPS_SERVICE) as LauncherApps
 
-public fun Context.getLayoutInflater(): LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+val Context.layoutInflater: LayoutInflater
+        get() = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-public fun Context.getLocationManager(): LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+val Context.locationManager: LocationManager
+        get() = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-public fun Context.getMediaProjectionManager(): MediaProjectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
+val Context.mediaProjectionManager: MediaProjectionManager
+        get() = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
 
-public fun Context.getMediaRouter(): MediaRouter = getSystemService(Context.MEDIA_ROUTER_SERVICE) as MediaRouter
+val Context.mediaRouter: MediaRouter
+        get() = getSystemService(Context.MEDIA_ROUTER_SERVICE) as MediaRouter
 
-public fun Context.getMediaSessionManager(): MediaSessionManager = getSystemService(Context.MEDIA_SESSION_SERVICE) as MediaSessionManager
+val Context.mediaSessionManager: MediaSessionManager
+        get() = getSystemService(Context.MEDIA_SESSION_SERVICE) as MediaSessionManager
 
-public fun Context.getNfcManager(): NfcManager = getSystemService(Context.NFC_SERVICE) as NfcManager
+val Context.nfcManager: NfcManager
+        get() = getSystemService(Context.NFC_SERVICE) as NfcManager
 
-public fun Context.getNotificationManager(): NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+val Context.notificationManager: NotificationManager
+        get() = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-public fun Context.getNsdManager(): NsdManager = getSystemService(Context.NSD_SERVICE) as NsdManager
+val Context.nsdManager: NsdManager
+        get() = getSystemService(Context.NSD_SERVICE) as NsdManager
 
-public fun Context.getPowerManager(): PowerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+val Context.powerManager: PowerManager
+        get() = getSystemService(Context.POWER_SERVICE) as PowerManager
 
-public fun Context.getPrintManager(): PrintManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
+val Context.printManager: PrintManager
+        get() = getSystemService(Context.PRINT_SERVICE) as PrintManager
 
-public fun Context.getRestrictionsManager(): RestrictionsManager = getSystemService(Context.RESTRICTIONS_SERVICE) as RestrictionsManager
+val Context.restrictionsManager: RestrictionsManager
+        get() = getSystemService(Context.RESTRICTIONS_SERVICE) as RestrictionsManager
 
-public fun Context.getSearchManager(): SearchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+val Context.searchManager: SearchManager
+        get() = getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
-public fun Context.getSensorManager(): SensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+val Context.sensorManager: SensorManager
+        get() = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
-public fun Context.getStorageManager(): StorageManager = getSystemService(Context.STORAGE_SERVICE) as StorageManager
+val Context.storageManager: StorageManager
+        get() = getSystemService(Context.STORAGE_SERVICE) as StorageManager
 
-public fun Context.getTelecomManager(): TelecomManager = getSystemService(Context.TELECOM_SERVICE) as TelecomManager
+val Context.telecomManager: TelecomManager
+        get() = getSystemService(Context.TELECOM_SERVICE) as TelecomManager
 
-public fun Context.getTelephonyManager(): TelephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+val Context.telephonyManager: TelephonyManager
+        get() = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
-public fun Context.getTextServicesManager(): TextServicesManager = getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE) as TextServicesManager
+val Context.textServicesManager: TextServicesManager
+        get() = getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE) as TextServicesManager
 
-public fun Context.getTvInputManager(): TvInputManager = getSystemService(Context.TV_INPUT_SERVICE) as TvInputManager
+val Context.tvInputManager: TvInputManager
+        get() = getSystemService(Context.TV_INPUT_SERVICE) as TvInputManager
 
-public fun Context.getUiModeManager(): UiModeManager = getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
+val Context.uiModeManager: UiModeManager
+        get() = getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
 
-public fun Context.getUsbManager(): UsbManager = getSystemService(Context.USB_SERVICE) as UsbManager
+val Context.usbManager: UsbManager
+        get() = getSystemService(Context.USB_SERVICE) as UsbManager
 
-public fun Context.getUserManager(): UserManager = getSystemService(Context.USER_SERVICE) as UserManager
+val Context.userManager: UserManager
+        get() = getSystemService(Context.USER_SERVICE) as UserManager
 
-public fun Context.getVibrator(): Vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+val Context.vibrator: Vibrator
+        get() = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
-public fun Context.getWallpaperManager(): WallpaperManager = getSystemService(Context.WALLPAPER_SERVICE) as WallpaperManager
+val Context.wallpaperManager: WallpaperManager
+        get() = getSystemService(Context.WALLPAPER_SERVICE) as WallpaperManager
 
-public fun Context.getWifiP2pManager(): WifiP2pManager = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
+val Context.wifiP2pManager: WifiP2pManager
+        get() = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
 
-public fun Context.getWifiManager(): WifiManager = getSystemService(Context.WIFI_SERVICE) as WifiManager
+val Context.wifiManager: WifiManager
+        get() = getSystemService(Context.WIFI_SERVICE) as WifiManager
 
-public fun Context.getWindowManager(): WindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+val Context.windowManager: WindowManager
+        get() = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
-public fun Context.getDefaultSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+val Context.defaultSharedPreferences: SharedPreferences
+        get() = PreferenceManager.getDefaultSharedPreferences(this)
 
-public inline fun Context.startActivity<reified T : Any>() {
+inline fun Context.startActivity<reified T : Any>() {
     startActivity(IntentFor<T>(this))
 }

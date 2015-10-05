@@ -3,7 +3,7 @@
 # KAndroid
 <img src="art/logo.png" width="160px">
 
-Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin M13** build.
+Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin M14** build.
 
 Download
 --------
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.2.1@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.2.2@aar'
 }
 ```
 
@@ -78,13 +78,13 @@ seekBar.onProgressChanged { progress, fromUser ->
 #### Using system services
 ```kotlin
 // instead of getSystemService(Context.WINDOW_SERVICE) as WindowManager
-getWindowManager()
+windowManager
 // instead of getSystemService(Context.POWER_SERVICE) as PowerManager
-getPowerManager()
+powerManager
 // instead of getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-getNotificationManager()
+notificationManager
 // instead of getSystemService(Context.USER_SERVICE) as UserManager
-getUserManager()
+userManager
 // etc.
 ```
 #### Toast messages
