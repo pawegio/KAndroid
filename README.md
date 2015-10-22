@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.3.0@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.3.1@aar'
 }
 ```
 
