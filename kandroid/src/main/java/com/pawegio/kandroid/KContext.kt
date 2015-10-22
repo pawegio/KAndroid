@@ -199,6 +199,6 @@ val Context.windowManager: WindowManager
 val Context.defaultSharedPreferences: SharedPreferences
         get() = PreferenceManager.getDefaultSharedPreferences(this)
 
-inline fun Context.startActivity<reified T : Any>() {
+inline fun <reified T : Any> Context.startActivity() {
     startActivity(IntentFor<T>(this))
 }
