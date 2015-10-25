@@ -30,27 +30,28 @@ fun Any.wtf(tag: String, msg: String) {
 }
 
 fun Any.v(msg: String) {
-    Log.v(getTag(), msg)
+    Log.v(tag, msg)
 }
 
 fun Any.d(msg: String) {
-    Log.d(getTag(), msg)
+    Log.d(tag, msg)
 }
 
 fun Any.i(msg: String) {
-    Log.i(getTag(), msg)
+    Log.i(tag, msg)
 }
 
 fun Any.w(msg: String) {
-    Log.w(getTag(), msg)
+    Log.w(tag, msg)
 }
 
 fun Any.e(msg: String) {
-    Log.e(getTag(), msg)
+    Log.e(tag, msg)
 }
 
 fun Any.wtf(msg: String) {
-    Log.wtf(getTag(), msg)
+    Log.wtf(tag, msg)
 }
 
-private fun Any.getTag() = javaClass.simpleName
+private val Any.tag: String?
+    get() = javaClass.simpleName
