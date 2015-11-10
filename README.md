@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.3.2@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.3.3@aar'
 }
 ```
 
@@ -26,6 +26,27 @@ Usage
 // instead of findViewById(R.id.textView) as TextView
 val textView = find<TextView>(R.id.textView)
 ```
+#### TextWatcher
+```kotlin
+/* instead of:
+editText.addTextChangedListener(object : TextWatcher {
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        before()
+    }
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        onChange()
+    }
+    override fun afterTextChanged(s: Editable?) {
+        after()
+    }
+}) */
+editText.textWatcher {
+    beforeTextChanged { text, start, count, after -> before() }
+    onTextChanged { text, start, before, count -> onChange() }
+    afterTextChanged { text -> after() }
+}
+```
+
 #### SearchView extensions
 ```kotlin
 /* instead of:
