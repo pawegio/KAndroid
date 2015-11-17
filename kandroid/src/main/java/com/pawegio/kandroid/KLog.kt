@@ -1,10 +1,67 @@
+/*
+ * Copyright 2015 Paweł Gajda
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.pawegio.kandroid
 
 import android.util.Log
 
-/**
- * @author pawegio
- */
+fun Any.v(msg: () -> String) {
+    if (Log.isLoggable(tag, Log.VERBOSE)) v(msg())
+}
+
+fun Any.d(msg: () -> String) {
+    if (Log.isLoggable(tag, Log.DEBUG)) d(msg())
+}
+
+fun Any.i(msg: () -> String) {
+    if (Log.isLoggable(tag, Log.INFO)) i(msg())
+}
+
+fun Any.e(msg: () -> String) {
+    if (Log.isLoggable(tag, Log.ERROR)) e(msg())
+}
+
+fun Any.wtf(msg: () -> String) {
+    w(msg())
+}
+
+fun Any.v(msg: String) {
+    v(tag, msg)
+}
+
+fun Any.d(msg: String) {
+    d(tag, msg)
+}
+
+fun Any.i(msg: String) {
+    i(tag, msg)
+}
+
+fun Any.w(msg: String) {
+    w(tag, msg)
+}
+
+fun Any.e(msg: String) {
+    e(tag, msg)
+}
+
+fun Any.wtf(msg: String) {
+    wtf(tag, msg)
+}
+
 fun Any.v(tag: String, msg: String) {
     Log.v(tag, msg)
 }
@@ -29,29 +86,5 @@ fun Any.wtf(tag: String, msg: String) {
     Log.wtf(tag, msg)
 }
 
-fun Any.v(msg: String) {
-    Log.v(tag, msg)
-}
-
-fun Any.d(msg: String) {
-    Log.d(tag, msg)
-}
-
-fun Any.i(msg: String) {
-    Log.i(tag, msg)
-}
-
-fun Any.w(msg: String) {
-    Log.w(tag, msg)
-}
-
-fun Any.e(msg: String) {
-    Log.e(tag, msg)
-}
-
-fun Any.wtf(msg: String) {
-    Log.wtf(tag, msg)
-}
-
-private val Any.tag: String?
+private val Any.tag: String
     get() = javaClass.simpleName

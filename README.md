@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.3.4@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.3.5@aar'
 }
 ```
 
@@ -131,13 +131,14 @@ startActivityForResult<SampleActivity>(REQUEST_CODE)
 ```
 #### Logging
 ```kotlin
-// using javaClass.getSimpleName() as a TAG
-v("Verbose log message")
-d("Debug log message")
-i("Info log message")
+// using javaClass.simpleName as a TAG
 w("Warn log message")
 e("Error log message")
 wtf("WTF log message")
+// using lambda log method
+v { "Verbose log message" }
+d { "Debug log message" }
+i { "Info log message" }
 // or with custom TAG
 v("CustomTag", "Verbose log message with custom tag") 
 ```
