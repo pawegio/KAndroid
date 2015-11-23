@@ -26,6 +26,15 @@ Usage
 // instead of findViewById(R.id.textView) as TextView
 val textView = find<TextView>(R.id.textView)
 ```
+#### Accessing ViewGroup children
+```kotlin
+/* instead of:
+for (i in 0..layout - 1) {
+    layout.getChildAt(i).visibility = View.GONE
+}
+*/
+layout.views.forEach { it.visibility = View.GONE }
+```
 #### TextWatcher
 ```kotlin
 /* instead of:
