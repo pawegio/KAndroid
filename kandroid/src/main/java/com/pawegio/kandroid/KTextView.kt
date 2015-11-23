@@ -1,4 +1,5 @@
 /*
+ * Copyright 2015 JetBrains s.r.o.
  * Copyright 2015 Paweł Gajda
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,11 +21,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.TextView
 
-fun TextView.textWatcher(init: _TextWatcher.() -> Unit) {
-    addTextChangedListener(_TextWatcher().apply(init))
+fun TextView.textWatcher(init: KTextWatcher.() -> Unit) {
+    addTextChangedListener(KTextWatcher().apply(init))
 }
 
-class _TextWatcher : TextWatcher {
+class KTextWatcher : TextWatcher {
 
     private var _beforeTextChanged: ((CharSequence?, Int, Int, Int) -> Unit)? = null
     private var _onTextChanged: ((CharSequence?, Int, Int, Int) -> Unit)? = null
