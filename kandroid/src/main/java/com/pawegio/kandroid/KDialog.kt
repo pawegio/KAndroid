@@ -220,7 +220,7 @@ class KAlertDialogBuilder(val ctx: Context) {
         builder.setPositiveButton(title, { dialog, which -> dialog.f() })
     }
 
-    fun negativeButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) {
+    fun negativeButton(textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) {
         negativeButton(ctx.getString(textResource), f)
     }
 
