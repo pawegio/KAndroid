@@ -28,6 +28,6 @@ fun Activity.toast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.
 
 fun Activity.longToast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_LONG).show()
 
-inline fun <reified T : Any> Activity.startActivityForResult(requestCode: Int, options: Bundle? = null) {
-    startActivityForResult(IntentFor<T>(this), requestCode, options)
+inline fun <reified T : Any> Activity.startActivityForResult(requestCode: Int, options: Bundle? = null, action: String? = null) {
+    startActivityForResult(IntentFor<T>(this).setAction(action), requestCode, options)
 }
