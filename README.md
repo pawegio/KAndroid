@@ -1,10 +1,10 @@
 [ ![Download](https://api.bintray.com/packages/pawegio/maven/com.pawegio.kandroid%3Akandroid/images/download.svg) ](https://bintray.com/pawegio/maven/com.pawegio.kandroid%3Akandroid/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-KAndroid-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1705) [![](https://img.shields.io/badge/AndroidWeekly-%23148-blue.svg)](http://androidweekly.net/issues/issue-148)
-<a href="http://www.methodscount.com/?lib=com.pawegio.kandroid%3Akandroid%3A0.3.9"><img src="https://img.shields.io/badge/Methods and size-core: 343 | deps: 22202 | 88 KB-e91e63.svg"></img></a>
+<a href="http://www.methodscount.com/?lib=com.pawegio.kandroid%3Akandroid%3A0.4.0"><img src="https://img.shields.io/badge/Methods and size-core: 343 | 88 KB-e91e63.svg"></img></a>
 
 # KAndroid
 <img src="art/logo.png" width="160px">
 
-Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin 1.0 Beta 2** build.
+Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is currently compatible with latest **Kotlin 1.0 Beta 4** build.
 
 Download
 --------
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.3.9@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.4.0@aar'
 }
 ```
 
