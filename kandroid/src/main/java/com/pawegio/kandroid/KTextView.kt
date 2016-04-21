@@ -43,15 +43,15 @@ class KTextWatcher : TextWatcher {
         _afterTextChanged?.invoke(s)
     }
 
-    public fun beforeTextChanged(listener: (CharSequence?, Int, Int, Int) -> Unit) {
+    fun beforeTextChanged(listener: (CharSequence?, Int, Int, Int) -> Unit) {
         _beforeTextChanged = listener
     }
 
-    public fun onTextChanged(listener: (CharSequence?, Int, Int, Int) -> Unit) {
+    fun onTextChanged(listener: (CharSequence?, Int, Int, Int) -> Unit) {
         _onTextChanged = listener
     }
 
-    public fun afterTextChanged(listener: (Editable?) -> Unit) {
+    fun afterTextChanged(listener: (Editable?) -> Unit) {
         _afterTextChanged = listener
     }
 
