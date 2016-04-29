@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.0@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.6.1@aar'
 }
 ```
 
@@ -175,6 +175,23 @@ runOnUiThread {
 // equals Handler(Looper.getMainLooper()).postDelayed(Runnable { /* delayed UI update */ }, delayMillis)
 runDelayedOnUiThread(5000) {
     // delayed UI update
+}
+```
+#### From/To API SDK
+```kotlin
+// instead of if (Build.VERSION.SDK_INT >= 21) { /* run methods available since API 21 */ }
+fromApi(21) {
+    // run methods available since API 21
+}
+
+// instead of if (Build.VERSION.SDK_INT < 16) { /* handle devices using older APIs */ }
+toApi(16) {
+    // handle devices running older APIs
+}
+// or
+// instead of if (Build.VERSION.SDK_INT <= 16) { /* handle devices using older APIs */ }
+toApi(16, inclusive = true) {
+    // handle devices running older APIs
 }
 ```
 #### More
