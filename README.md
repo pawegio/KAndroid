@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.3@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.6.4@aar'
 }
 ```
 
@@ -193,6 +193,11 @@ toApi(16) {
 toApi(16, inclusive = true) {
     // handle devices running older APIs
 }
+```
+#### Loading animation from xml
+```kotlin
+// instead of AnimationUtils.loadAnimation(applicationContext, R.anim.slide_in_left)
+loadAnimation(R.anim.slide_in_left)
 ```
 #### More
 Under development so expect soon.
