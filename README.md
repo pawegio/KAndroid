@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.4@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.6.5@aar'
 }
 ```
 
@@ -198,6 +198,11 @@ toApi(16, inclusive = true) {
 ```kotlin
 // instead of AnimationUtils.loadAnimation(applicationContext, R.anim.slide_in_left)
 loadAnimation(R.anim.slide_in_left)
+```
+#### Web intents with url validation
+```kotlin
+// instead of Intent(Intent.ACTION_VIEW, Uri.parse("http://github.com"))
+WebIntent("http://github.com")
 ```
 #### More
 Under development so expect soon.
