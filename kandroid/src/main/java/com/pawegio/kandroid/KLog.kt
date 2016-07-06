@@ -62,27 +62,27 @@ fun Any.wtf(msg: String) {
     wtf(tag, msg)
 }
 
-fun Any.v(tag: String, msg: String) {
+fun v(tag: String, msg: String) {
     Log.v(tag, msg)
 }
 
-fun Any.d(tag: String, msg: String) {
+fun d(tag: String, msg: String) {
     Log.d(tag, msg)
 }
 
-fun Any.i(tag: String, msg: String) {
+fun i(tag: String, msg: String) {
     Log.i(tag, msg)
 }
 
-fun Any.w(tag: String, msg: String) {
+fun w(tag: String, msg: String) {
     Log.w(tag, msg)
 }
 
-fun Any.e(tag: String, msg: String) {
+fun e(tag: String, msg: String) {
     Log.e(tag, msg)
 }
 
-fun Any.wtf(tag: String, msg: String) {
+fun wtf(tag: String, msg: String) {
     Log.wtf(tag, msg)
 }
 
