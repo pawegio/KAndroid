@@ -147,7 +147,7 @@ fun Context.selector(
 class KAlertDialogBuilder(val ctx: Context) {
 
     val builder: AlertDialog.Builder = AlertDialog.Builder(ctx)
-    protected var dialog: AlertDialog? = null
+    var dialog: AlertDialog? = null
 
     fun dismiss() {
         dialog?.dismiss()
