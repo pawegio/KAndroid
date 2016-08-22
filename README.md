@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.7@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.6.8@aar'
 }
 ```
 
@@ -108,13 +108,13 @@ seekBar.onProgressChanged { progress, fromUser ->
 ```
 #### Using system services
 ```kotlin
-// instead of getSystemService(Context.WINDOW_SERVICE) as WindowManager
+// instead of getSystemService(Context.WINDOW_SERVICE) as WindowManager?
 windowManager
-// instead of getSystemService(Context.POWER_SERVICE) as PowerManager
+// instead of getSystemService(Context.POWER_SERVICE) as PowerManager?
 powerManager
-// instead of getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+// instead of getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
 notificationManager
-// instead of getSystemService(Context.USER_SERVICE) as UserManager
+// instead of getSystemService(Context.USER_SERVICE) as UserManager?
 userManager
 // etc.
 ```
