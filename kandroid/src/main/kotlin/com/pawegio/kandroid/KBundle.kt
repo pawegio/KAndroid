@@ -21,3 +21,7 @@ import android.os.Parcelable
 
 inline fun <reified T : Parcelable> Bundle.putParcelableCollection(key: String, value: Collection<T>) =
         putParcelableArray(key, value.toTypedArray())
+
+inline fun Bundle.getParcelableMutableList(key: String): MutableList<Parcelable> = getParcelableArray(key).toMutableList()
+
+inline fun Bundle.getParcelableMutableSet(key: String): MutableSet<Parcelable> = getParcelableArray(key).toMutableSet()
