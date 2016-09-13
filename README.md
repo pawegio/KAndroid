@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.11@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.6.12@aar'
 }
 ```
 
