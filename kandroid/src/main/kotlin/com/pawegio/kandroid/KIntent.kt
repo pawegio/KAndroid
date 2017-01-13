@@ -31,8 +31,8 @@ inline fun Intent.startForResult(activity: Activity, requestCode: Int) = activit
 
 inline fun Intent.startForResult(fragment: Fragment, requestCode: Int) = fragment.startActivityForResult(this, requestCode)
 
-inline fun WebIntent(url: String): Intent {
-    return if (Patterns.WEB_URL.matcher(url).matches()) {
-        Intent(Intent.ACTION_VIEW, Uri.parse(url))
-    } else throw IllegalArgumentException("Passed url: $url does not match URL pattern.")
-}
+inline fun WebIntent(url: String): Intent =
+        if (Patterns.WEB_URL.matcher(url).matches()) {
+            Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        } else
+            throw IllegalArgumentException("Passed url: $url does not match URL pattern.")

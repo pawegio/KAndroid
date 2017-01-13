@@ -59,7 +59,6 @@ fun Context.alert(
     if (init != null) init()
 }
 
-
 fun Fragment.alert(init: KAlertDialogBuilder.() -> Unit): KAlertDialogBuilder = activity.alert(init)
 
 fun Context.alert(init: KAlertDialogBuilder.() -> Unit) = KAlertDialogBuilder(this).apply { init() }
@@ -149,9 +148,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     val builder: AlertDialog.Builder = AlertDialog.Builder(ctx)
     var dialog: AlertDialog? = null
 
-    fun dismiss() {
-        dialog?.dismiss()
-    }
+    fun dismiss() = dialog?.dismiss()
 
     fun show(): KAlertDialogBuilder {
         dialog = builder.create()
@@ -159,91 +156,59 @@ class KAlertDialogBuilder(val ctx: Context) {
         return this
     }
 
-    fun title(title: CharSequence) {
-        builder.setTitle(title)
-    }
+    fun title(title: CharSequence) = builder.setTitle(title)
 
-    fun title(resource: Int) {
-        builder.setTitle(resource)
-    }
+    fun title(resource: Int) = builder.setTitle(resource)
 
-    fun message(title: CharSequence) {
-        builder.setMessage(title)
-    }
+    fun message(title: CharSequence) = builder.setMessage(title)
 
-    fun message(resource: Int) {
-        builder.setMessage(resource)
-    }
+    fun message(resource: Int) = builder.setMessage(resource)
 
-    fun icon(icon: Int) {
-        builder.setIcon(icon)
-    }
+    fun icon(icon: Int) = builder.setIcon(icon)
 
-    fun icon(icon: Drawable) {
-        builder.setIcon(icon)
-    }
+    fun icon(icon: Drawable) = builder.setIcon(icon)
 
-    fun customTitle(title: View) {
-        builder.setCustomTitle(title)
-    }
+    fun customTitle(title: View) = builder.setCustomTitle(title)
 
-    fun customView(view: View) {
-        builder.setView(view)
-    }
+    fun customView(view: View) = builder.setView(view)
 
-    fun cancellable(value: Boolean = true) {
-        builder.setCancelable(value)
-    }
+    fun cancellable(value: Boolean = true) = builder.setCancelable(value)
 
-    fun onCancel(f: () -> Unit) {
-        builder.setOnCancelListener { f() }
-    }
+    fun onCancel(f: () -> Unit) = builder.setOnCancelListener { f() }
 
-    fun onKey(f: (keyCode: Int, e: KeyEvent) -> Boolean) {
-        builder.setOnKeyListener({ dialog, keyCode, event -> f(keyCode, event) })
-    }
+    fun onKey(f: (keyCode: Int, e: KeyEvent) -> Boolean) =
+            builder.setOnKeyListener({ dialog, keyCode, event -> f(keyCode, event) })
 
-    fun neutralButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) {
-        neutralButton(ctx.getString(textResource), f)
-    }
+    fun neutralButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) =
+            neutralButton(ctx.getString(textResource), f)
 
-    fun neutralButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNeutralButton(title, { dialog, which -> dialog.f() })
-    }
+    fun neutralButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) =
+            builder.setNeutralButton(title, { dialog, which -> dialog.f() })
 
-    fun positiveButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit) {
-        positiveButton(ctx.getString(textResource), f)
-    }
+    fun positiveButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit) =
+            positiveButton(ctx.getString(textResource), f)
 
-    fun positiveButton(title: String, f: DialogInterface.() -> Unit) {
-        builder.setPositiveButton(title, { dialog, which -> dialog.f() })
-    }
+    fun positiveButton(title: String, f: DialogInterface.() -> Unit) =
+            builder.setPositiveButton(title, { dialog, which -> dialog.f() })
 
-    fun negativeButton(textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) {
-        negativeButton(ctx.getString(textResource), f)
-    }
+    fun negativeButton(textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) =
+            negativeButton(ctx.getString(textResource), f)
 
-    fun negativeButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNegativeButton(title, { dialog, which -> dialog.f() })
-    }
+    fun negativeButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) =
+            builder.setNegativeButton(title, { dialog, which -> dialog.f() })
 
-    fun items(itemsId: Int, f: (which: Int) -> Unit) {
-        items(ctx.resources!!.getTextArray(itemsId), f)
-    }
+    fun items(itemsId: Int, f: (which: Int) -> Unit) =
+            items(ctx.resources!!.getTextArray(itemsId), f)
 
-    fun items(items: List<CharSequence>, f: (which: Int) -> Unit) {
-        items(items.toTypedArray(), f)
-    }
+    fun items(items: List<CharSequence>, f: (which: Int) -> Unit) =
+            items(items.toTypedArray(), f)
 
-    fun items(items: Array<CharSequence>, f: (which: Int) -> Unit) {
-        builder.setItems(items, { dialog, which -> f(which) })
-    }
+    fun items(items: Array<CharSequence>, f: (which: Int) -> Unit) =
+            builder.setItems(items, { dialog, which -> f(which) })
 
-    fun adapter(adapter: ListAdapter, f: (which: Int) -> Unit) {
-        builder.setAdapter(adapter, { dialog, which -> f(which) })
-    }
+    fun adapter(adapter: ListAdapter, f: (which: Int) -> Unit) =
+            builder.setAdapter(adapter, { dialog, which -> f(which) })
 
-    fun adapter(cursor: Cursor, labelColumn: String, f: (which: Int) -> Unit) {
-        builder.setCursor(cursor, { dialog, which -> f(which) }, labelColumn)
-    }
+    fun adapter(cursor: Cursor, labelColumn: String, f: (which: Int) -> Unit) =
+            builder.setCursor(cursor, { dialog, which -> f(which) }, labelColumn)
 }
