@@ -156,9 +156,9 @@ class KAlertDialogBuilder(val ctx: Context) {
         return this
     }
 
-    fun title(title: CharSequence) = builder.setTitle(title)
+    fun title(title: CharSequence):AlertDialog.Builder = builder.setTitle(title)
 
-    fun title(resource: Int) = builder.setTitle(resource)
+    fun title(resource: Int):AlertDialog.Builder = builder.setTitle(resource)
 
     fun message(title: CharSequence) = builder.setMessage(title)
 
