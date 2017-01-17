@@ -50,10 +50,7 @@ import android.preference.PreferenceManager
 import android.print.PrintManager
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.CaptioningManager
 import android.view.inputmethod.InputMethodManager
@@ -218,6 +215,4 @@ val Context.windowManager: WindowManager?
 val Context.defaultSharedPreferences: SharedPreferences
     get() = PreferenceManager.getDefaultSharedPreferences(this)
 
-inline fun <reified T : Any> Context.startActivity() {
-    startActivity(IntentFor<T>(this))
-}
+inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
