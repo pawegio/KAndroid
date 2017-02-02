@@ -20,7 +20,7 @@ import android.content.Context
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
-inline fun Context.loadAnimation(id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
+fun Context.loadAnimation(id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
 
 fun Animation.animListener(init: AnimListener.() -> Unit) = setAnimationListener(AnimListener().apply(init))
 
