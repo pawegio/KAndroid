@@ -18,6 +18,7 @@ package com.pawegio.kandroid
 
 import android.app.Activity
 import android.os.Bundle
+import android.support.annotation.StringRes
 import android.view.View
 import android.widget.Toast
 
@@ -26,6 +27,10 @@ inline fun <reified T : View> Activity.find(id: Int): T = findViewById(id) as T
 inline fun Activity.toast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 
 inline fun Activity.longToast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+
+inline fun Activity.toast(@StringRes resId: Int): Unit = Toast.makeText(this, resId, Toast.LENGTH_SHORT).show()
+
+inline fun Activity.longToast(@StringRes resId: Int): Unit = Toast.makeText(this, resId, Toast.LENGTH_LONG).show()
 
 inline fun <reified T : Any> Activity.startActivityForResult(requestCode: Int, options: Bundle? = null, action: String? = null) =
     startActivityForResult(IntentFor<T>(this).setAction(action), requestCode, options)
