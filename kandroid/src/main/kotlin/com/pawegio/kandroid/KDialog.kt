@@ -59,7 +59,6 @@ fun Context.alert(
     if (init != null) init()
 }
 
-
 fun Fragment.alert(init: KAlertDialogBuilder.() -> Unit): KAlertDialogBuilder = activity.alert(init)
 
 fun Context.alert(init: KAlertDialogBuilder.() -> Unit) = KAlertDialogBuilder(this).apply { init() }
@@ -130,7 +129,7 @@ fun Fragment.selector(
         title: CharSequence? = null,
         items: List<CharSequence>,
         onClick: (Int) -> Unit
-): Unit = activity.selector(title, items, onClick)
+) = activity.selector(title, items, onClick)
 
 fun Context.selector(
         title: CharSequence? = null,
@@ -149,9 +148,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     val builder: AlertDialog.Builder = AlertDialog.Builder(ctx)
     var dialog: AlertDialog? = null
 
-    fun dismiss() {
-        dialog?.dismiss()
-    }
+    fun dismiss() = dialog?.dismiss()
 
     fun show(): KAlertDialogBuilder {
         dialog = builder.create()

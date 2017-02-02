@@ -20,9 +20,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.TextView
 
-fun TextView.textWatcher(init: KTextWatcher.() -> Unit) {
-    addTextChangedListener(KTextWatcher().apply(init))
-}
+fun TextView.textWatcher(init: KTextWatcher.() -> Unit) = addTextChangedListener(KTextWatcher().apply(init))
 
 class KTextWatcher : TextWatcher {
 
