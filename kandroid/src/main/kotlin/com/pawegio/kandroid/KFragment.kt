@@ -18,6 +18,7 @@ package com.pawegio.kandroid
 
 import android.app.Fragment
 import android.preference.PreferenceManager
+import android.support.annotation.StringRes
 import android.support.v4.app.Fragment as SupportFragment
 
 fun Fragment.getDefaultSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(activity)
@@ -26,8 +27,16 @@ fun Fragment.toast(text: CharSequence) = activity.toast(text)
 
 fun Fragment.longToast(text: CharSequence) = activity.longToast(text)
 
+fun Fragment.toast(@StringRes resId: Int): Unit = activity.toast(resId)
+
+fun Fragment.longToast(@StringRes resId: Int): Unit = activity.longToast(resId)
+
 fun SupportFragment.getDefaultSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(activity)
 
 fun SupportFragment.toast(text: CharSequence) = activity.toast(text)
 
 fun SupportFragment.longToast(text: CharSequence) = activity.longToast(text)
+
+fun SupportFragment.toast(@StringRes resId: Int): Unit = activity.toast(resId)
+
+fun SupportFragment.longToast(@StringRes resId: Int): Unit = activity.longToast(resId)
