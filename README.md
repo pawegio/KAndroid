@@ -123,7 +123,7 @@ userManager
 longToast("I'm long toast message!")
 toast("Hi, I'm short one!")
 
-toastLong(R.string.my_string)
+longToast(R.string.my_string)
 toast(R.string.my_string)
 ```
 #### Layout inflater
