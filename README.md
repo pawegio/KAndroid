@@ -122,6 +122,9 @@ userManager
 ```kotlin
 longToast("I'm long toast message!")
 toast("Hi, I'm short one!")
+
+toastLong(R.string.my_string)
+toast(R.string.my_string)
 ```
 #### Layout inflater
 ```kotlin
@@ -198,6 +201,28 @@ toApi(16, inclusive = true) {
 ```kotlin
 // instead of AnimationUtils.loadAnimation(applicationContext, R.anim.slide_in_left)
 loadAnimation(R.anim.slide_in_left)
+```
+#### Animation listener
+```kotlin
+
+/*instead of:
+animation.setAnimationListener(object : Animation.AnimationListener{
+	override fun onAnimationStart(animation: Animation?) {
+		onStart()
+	}
+	override fun onAnimationEnd(animation: Animation?) {
+		onEnd()
+	}
+	override fun onAnimationRepeat(animation: Animation) {
+		onRepeat()
+	}
+})*/
+
+animation.animListener {
+	onAnimationStart { onStart() }
+	onAnimationEnd { onEnd() }
+	onAnimationRepeat { onRepeat() }
+}
 ```
 #### Web intents with url validation
 ```kotlin
