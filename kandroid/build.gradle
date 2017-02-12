@@ -70,9 +70,9 @@ install {
                 }
                 developers {
                     developer {
-                        id project.findProperty(developerId)
-                        name project.findProperty(developerName)
-                        email project.findProperty(developerEmail)
+                        id project.findProperty("developerId")
+                        name project.findProperty("developerName")
+                        email project.findProperty("developerEmail")
                     }
                 }
                 scm {
@@ -117,8 +117,8 @@ artifacts {
 }
 
 bintray {
-    user = project.findProperty(bintrayUser)
-    key = project.findProperty(bintrayKey)
+    user = project.findProperty("bintrayUser")
+    key = project.findProperty("bintrayKey")
 
     configurations = ['archives']
     publish = true
