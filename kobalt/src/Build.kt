@@ -1,21 +1,20 @@
-import com.beust.kobalt.*
-import com.beust.kobalt.plugin.packaging.*
-import com.beust.kobalt.plugin.application.*
-import com.beust.kobalt.plugin.java.*
+import com.beust.kobalt.buildScript
+import com.beust.kobalt.plugin.packaging.assemble
+import com.beust.kobalt.project
 
-val kotlin_version = "1.0.6"
+val kandroidVersion = "0.6.16"
+
+val bs = buildScript {
+    plugins("com.beust:kobalt-android:0.92")
+}
+
 val p = project {
 
     name = "KAndroid"
-    group = "com.example"
+    group = "com.pawegio.kandroid"
     artifactId = name
-    version = "0.1"
-
-    dependencies {
-        compile("com.android.tools.build:gradle:2.1.0",
-            "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
-            "com.github.dcendents:android-maven-gradle-plugin:1.5")
-    }
+    version = kandroidVersion
+    directory = "kandroid"
 
     assemble {
         jar {
