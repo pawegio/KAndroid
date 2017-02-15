@@ -3,5 +3,5 @@ build/
 local.properties
 *.iml
 *.log
-.gradle/
+.kobalt/
 .DS_Store
