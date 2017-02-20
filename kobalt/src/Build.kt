@@ -5,7 +5,7 @@ import com.beust.kobalt.plugin.android.*
 val kandroidVersion = "0.6.16"
 
 val bs = buildScript {
-    plugins("com.beust:kobalt-android:0.95")
+    plugins("com.beust:kobalt-android:0.96")
 }
 
 val p = project {
