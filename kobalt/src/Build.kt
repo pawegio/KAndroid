@@ -1,5 +1,4 @@
 import com.beust.kobalt.buildScript
-import com.beust.kobalt.plugin.packaging.assemble
 import com.beust.kobalt.project
 import com.beust.kobalt.plugin.android.*
 
@@ -26,15 +25,10 @@ val p = project {
             buildToolsVersion = "25.0.1"
             applicationId = "com.pawegio.kandroid"
         }
+        aar {  }
     }
 
     dependencies {
         compile("com.android.support:appcompat-v7:25.1.0")
     }
-
-    assemble {
-        jar {
-        }
-    }
-
 }
