@@ -1,5 +1,5 @@
 .idea/
-build/
+kobaltBuild/
 local.properties
 *.iml
 *.log

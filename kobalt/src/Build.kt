@@ -14,7 +14,6 @@ val p = project {
     group = "com.pawegio.kandroid"
     artifactId = name
     version = kandroidVersion
-    directory = "kandroid"
 
     android {
         defaultConfig {
