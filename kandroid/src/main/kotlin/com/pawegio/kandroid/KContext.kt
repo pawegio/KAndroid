@@ -27,6 +27,7 @@ import android.content.Context
 import android.content.RestrictionsManager
 import android.content.SharedPreferences
 import android.content.pm.LauncherApps
+import android.content.pm.PackageManager
 import android.hardware.ConsumerIrManager
 import android.hardware.SensorManager
 import android.hardware.camera2.CameraManager
@@ -48,6 +49,7 @@ import android.os.*
 import android.os.storage.StorageManager
 import android.preference.PreferenceManager
 import android.print.PrintManager
+import android.support.v4.content.ContextCompat
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
 import android.view.*
@@ -216,3 +218,12 @@ val Context.defaultSharedPreferences: SharedPreferences
     get() = PreferenceManager.getDefaultSharedPreferences(this)
 
 inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
+
+fun Context.isPermissionGranted(permission:String):Boolean = ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+fun Context.isPermissionsGranted(vararg permissions:String):Boolean {
+    permissions.forEach { permission ->
+        if(ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_DENIED)
+            return false
+    }
+    return true
+}
