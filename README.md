@@ -4,7 +4,7 @@
 # KAndroid
 <img src="art/logo.png" width="160px">
 
-Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is compatible with **Kotlin 1.0.6** build.
+Kotlin library for Android providing useful extensions to eliminate boilerplate code in Android SDK and focus on productivity. Library is compatible with **Kotlin 1.1.0** build.
 
 Download
 --------
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.6.16@aar'
+    compile 'com.pawegio.kandroid:kandroid:0.7.0@aar'
 }
 ```
 
