@@ -219,11 +219,8 @@ val Context.defaultSharedPreferences: SharedPreferences
 
 inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
 
-fun Context.isPermissionGranted(permission:String):Boolean = ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
-fun Context.isPermissionsGranted(vararg permissions:String):Boolean {
-    permissions.forEach { permission ->
-        if(ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_DENIED)
-            return false
-    }
-    return true
-}
+fun Context.isPermissionGranted(permission: String): Boolean =
+        ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+
+fun Context.arePermissionsGranted(vararg permissions: String): Boolean =
+        permissions.all { ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED }
