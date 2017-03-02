@@ -25,14 +25,14 @@ fun Context.dp(value: Int): Int = (value * resources.displayMetrics.density).toI
 
 fun Context.sp(value: Int): Int = (value * resources.displayMetrics.scaledDensity).toInt()
 
-inline fun Fragment.dp(value: Int): Int = activity.dp(value)
+fun Fragment.dp(value: Int): Int = activity.dp(value)
 
-inline fun Fragment.sp(value: Int): Int = activity.sp(value)
+fun Fragment.sp(value: Int): Int = activity.sp(value)
 
-inline fun SupportFragment.dp(value: Int): Int = activity.dp(value)
+fun SupportFragment.dp(value: Int): Int = activity.dp(value)
 
-inline fun SupportFragment.sp(value: Int): Int = activity.sp(value)
+fun SupportFragment.sp(value: Int): Int = activity.sp(value)
 
-inline fun View.dp(value: Int): Int = context.dp(value)
+fun View.dp(value: Int): Int = context.dp(value)
 
-inline fun View.sp(value: Int): Int = context.sp(value)
+fun View.sp(value: Int): Int = context.sp(value)
