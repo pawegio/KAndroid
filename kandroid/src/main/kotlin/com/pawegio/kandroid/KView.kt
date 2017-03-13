@@ -16,6 +16,7 @@
 
 package com.pawegio.kandroid
 
+import android.support.annotation.IdRes
 import android.view.View
 
-inline fun <reified T : View> View.find(id: Int): T = findViewById(id) as T
+inline fun <reified T : View> View.find(@IdRes id: Int): T = findViewById(id) as T

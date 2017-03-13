@@ -17,10 +17,11 @@
 package com.pawegio.kandroid
 
 import android.content.Context
+import android.support.annotation.AnimRes
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
-inline fun Context.loadAnimation(id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
+inline fun Context.loadAnimation(@AnimRes id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
 
 fun Animation.animListener(init: AnimListener.() -> Unit) = setAnimationListener(AnimListener().apply(init))
 
