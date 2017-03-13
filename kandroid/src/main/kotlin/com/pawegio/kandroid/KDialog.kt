@@ -198,7 +198,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun onKey(f: (keyCode: Int, e: KeyEvent) -> Boolean) {
-        builder.setOnKeyListener({ dialog, keyCode, event -> f(keyCode, event) })
+        builder.setOnKeyListener({ _, keyCode, event -> f(keyCode, event) })
     }
 
     fun neutralButton(@StringRes textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) {
@@ -206,7 +206,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun neutralButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNeutralButton(title, { dialog, which -> dialog.f() })
+        builder.setNeutralButton(title, { dialog, _ -> dialog.f() })
     }
 
     fun positiveButton(@StringRes textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit) {
@@ -214,7 +214,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun positiveButton(title: String, f: DialogInterface.() -> Unit) {
-        builder.setPositiveButton(title, { dialog, which -> dialog.f() })
+        builder.setPositiveButton(title, { dialog, _ -> dialog.f() })
     }
 
     fun negativeButton(@StringRes textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) {
@@ -222,7 +222,7 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun negativeButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNegativeButton(title, { dialog, which -> dialog.f() })
+        builder.setNegativeButton(title, { dialog, _ -> dialog.f() })
     }
 
     fun items(@ArrayRes itemsId: Int, f: (which: Int) -> Unit) {
@@ -234,14 +234,14 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun items(items: Array<CharSequence>, f: (which: Int) -> Unit) {
-        builder.setItems(items, { dialog, which -> f(which) })
+        builder.setItems(items, { _, which -> f(which) })
     }
 
     fun adapter(adapter: ListAdapter, f: (which: Int) -> Unit) {
-        builder.setAdapter(adapter, { dialog, which -> f(which) })
+        builder.setAdapter(adapter, { _, which -> f(which) })
     }
 
     fun adapter(cursor: Cursor, labelColumn: String, f: (which: Int) -> Unit) {
-        builder.setCursor(cursor, { dialog, which -> f(which) }, labelColumn)
+        builder.setCursor(cursor, { _, which -> f(which) }, labelColumn)
     }
 }
