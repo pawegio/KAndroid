@@ -49,6 +49,7 @@ import android.os.*
 import android.os.storage.StorageManager
 import android.preference.PreferenceManager
 import android.print.PrintManager
+import android.support.annotation.LayoutRes
 import android.support.v4.content.ContextCompat
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
@@ -64,7 +65,7 @@ val Context.displayWidth: Int
 val Context.displayHeight: Int
     get() = resources.displayMetrics.heightPixels
 
-fun Context.inflateLayout(layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View
+fun Context.inflateLayout(@LayoutRes layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View
         = LayoutInflater.from(this).inflate(layoutResId, parent, attachToRoot)
 
 val Context.accessibilityManager: AccessibilityManager?

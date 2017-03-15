@@ -22,6 +22,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.database.Cursor
 import android.graphics.drawable.Drawable
+import android.support.annotation.*
 import android.support.v7.app.AlertDialog
 import android.view.KeyEvent
 import android.view.View
@@ -44,14 +45,14 @@ fun Context.alert(
 }
 
 fun Fragment.alert(
-        message: Int,
-        title: Int? = null,
+        @StringRes message: Int,
+        @StringRes title: Int? = null,
         init: (KAlertDialogBuilder.() -> Unit)? = null
 ) = activity.alert(message, title, init)
 
 fun Context.alert(
-        message: Int,
-        title: Int? = null,
+        @StringRes message: Int,
+        @StringRes title: Int? = null,
         init: (KAlertDialogBuilder.() -> Unit)? = null
 ) = KAlertDialogBuilder(this).apply {
     if (title != null) title(title)
@@ -64,26 +65,26 @@ fun Fragment.alert(init: KAlertDialogBuilder.() -> Unit): KAlertDialogBuilder = 
 fun Context.alert(init: KAlertDialogBuilder.() -> Unit) = KAlertDialogBuilder(this).apply { init() }
 
 fun Fragment.progressDialog(
-        message: Int? = null,
-        title: Int? = null,
+        @StringRes message: Int? = null,
+        @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.progressDialog(message, title, init)
 
 fun Context.progressDialog(
-        message: Int? = null,
-        title: Int? = null,
+        @StringRes message: Int? = null,
+        @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(false, message?.let { getString(it) }, title?.let { getString(it) }, init)
 
 fun Fragment.indeterminateProgressDialog(
-        message: Int? = null,
-        title: Int? = null,
+        @StringRes message: Int? = null,
+        @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.progressDialog(message, title, init)
 
 fun Context.indeterminateProgressDialog(
-        message: Int? = null,
-        title: Int? = null,
+        @StringRes message: Int? = null,
+        @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(true, message?.let { getString(it) }, title?.let { getString(it) }, init)
 
@@ -160,7 +161,7 @@ class KAlertDialogBuilder(val ctx: Context) {
         builder.setTitle(title)
     }
 
-    fun title(resource: Int) {
+    fun title(@StringRes resource: Int) {
         builder.setTitle(resource)
     }
 
@@ -168,11 +169,11 @@ class KAlertDialogBuilder(val ctx: Context) {
         builder.setMessage(title)
     }
 
-    fun message(resource: Int) {
+    fun message(@StringRes resource: Int) {
         builder.setMessage(resource)
     }
 
-    fun icon(icon: Int) {
+    fun icon(@DrawableRes icon: Int) {
         builder.setIcon(icon)
     }
 
@@ -197,34 +198,34 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun onKey(f: (keyCode: Int, e: KeyEvent) -> Boolean) {
-        builder.setOnKeyListener({ dialog, keyCode, event -> f(keyCode, event) })
+        builder.setOnKeyListener({ _, keyCode, event -> f(keyCode, event) })
     }
 
-    fun neutralButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) {
+    fun neutralButton(@StringRes textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit = { dismiss() }) {
         neutralButton(ctx.getString(textResource), f)
     }
 
     fun neutralButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNeutralButton(title, { dialog, which -> dialog.f() })
+        builder.setNeutralButton(title, { dialog, _ -> dialog.f() })
     }
 
-    fun positiveButton(textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit) {
+    fun positiveButton(@StringRes textResource: Int = android.R.string.ok, f: DialogInterface.() -> Unit) {
         positiveButton(ctx.getString(textResource), f)
     }
 
     fun positiveButton(title: String, f: DialogInterface.() -> Unit) {
-        builder.setPositiveButton(title, { dialog, which -> dialog.f() })
+        builder.setPositiveButton(title, { dialog, _ -> dialog.f() })
     }
 
-    fun negativeButton(textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) {
+    fun negativeButton(@StringRes textResource: Int = android.R.string.cancel, f: DialogInterface.() -> Unit = { dismiss() }) {
         negativeButton(ctx.getString(textResource), f)
     }
 
     fun negativeButton(title: String, f: DialogInterface.() -> Unit = { dismiss() }) {
-        builder.setNegativeButton(title, { dialog, which -> dialog.f() })
+        builder.setNegativeButton(title, { dialog, _ -> dialog.f() })
     }
 
-    fun items(itemsId: Int, f: (which: Int) -> Unit) {
+    fun items(@ArrayRes itemsId: Int, f: (which: Int) -> Unit) {
         items(ctx.resources!!.getTextArray(itemsId), f)
     }
 
@@ -233,14 +234,14 @@ class KAlertDialogBuilder(val ctx: Context) {
     }
 
     fun items(items: Array<CharSequence>, f: (which: Int) -> Unit) {
-        builder.setItems(items, { dialog, which -> f(which) })
+        builder.setItems(items, { _, which -> f(which) })
     }
 
     fun adapter(adapter: ListAdapter, f: (which: Int) -> Unit) {
-        builder.setAdapter(adapter, { dialog, which -> f(which) })
+        builder.setAdapter(adapter, { _, which -> f(which) })
     }
 
     fun adapter(cursor: Cursor, labelColumn: String, f: (which: Int) -> Unit) {
-        builder.setCursor(cursor, { dialog, which -> f(which) }, labelColumn)
+        builder.setCursor(cursor, { _, which -> f(which) }, labelColumn)
     }
 }
