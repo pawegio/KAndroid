@@ -17,6 +17,8 @@
 package com.pawegio.kandroid
 
 import android.app.Activity
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.annotation.StringRes
@@ -35,3 +37,14 @@ inline fun Activity.longToast(@StringRes resId: Int): Unit = Toast.makeText(this
 
 inline fun <reified T : Any> Activity.startActivityForResult(requestCode: Int, options: Bundle? = null, action: String? = null) =
         startActivityForResult(IntentFor<T>(this).setAction(action), requestCode, options)
+
+inline fun Activity.lockCurrentScreenOrientation() {
+    requestedOrientation = when (resources.configuration.orientation) {
+        Configuration.ORIENTATION_LANDSCAPE -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+        else -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
+    }
+}
+
+inline fun Activity.unlockScreenOrientation() {
+    requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR
+}
