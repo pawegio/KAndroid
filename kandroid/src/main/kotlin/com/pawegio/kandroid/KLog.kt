@@ -48,17 +48,17 @@ fun Any.e(msg: String) = e(tag, msg)
 
 fun Any.wtf(msg: String) = wtf(tag, msg)
 
-fun v(tag: String, msg: String) = Log.v(tag, msg)
+inline fun v(tag: String, msg: String) = Log.v(tag, msg)
 
-fun d(tag: String, msg: String) = Log.d(tag, msg)
+inline fun d(tag: String, msg: String) = Log.d(tag, msg)
 
-fun i(tag: String, msg: String) = Log.i(tag, msg)
+inline fun i(tag: String, msg: String) = Log.i(tag, msg)
 
-fun w(tag: String, msg: String) = Log.w(tag, msg)
+inline fun w(tag: String, msg: String) = Log.w(tag, msg)
 
-fun e(tag: String, msg: String) = Log.e(tag, msg)
+inline fun e(tag: String, msg: String) = Log.e(tag, msg)
 
-fun wtf(tag: String, msg: String) = Log.wtf(tag, msg)
+inline fun wtf(tag: String, msg: String) = Log.wtf(tag, msg)
 
 private val Any.tag: String
     get() = javaClass.simpleName

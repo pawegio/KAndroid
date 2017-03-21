@@ -21,9 +21,9 @@ import android.support.v4.app.Fragment as SupportFragment
 import android.content.Context
 import android.view.View
 
-fun Context.dp(value: Int): Int = (value * resources.displayMetrics.density).toInt()
+inline fun Context.dp(value: Int): Int = (value * resources.displayMetrics.density).toInt()
 
-fun Context.sp(value: Int): Int = (value * resources.displayMetrics.scaledDensity).toInt()
+inline fun Context.sp(value: Int): Int = (value * resources.displayMetrics.scaledDensity).toInt()
 
 inline fun Fragment.dp(value: Int): Int = activity.dp(value)
 

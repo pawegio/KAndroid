@@ -23,7 +23,7 @@ import android.view.animation.AnimationUtils
 
 inline fun Context.loadAnimation(@AnimRes id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
 
-fun Animation.animListener(init: AnimListener.() -> Unit) = setAnimationListener(AnimListener().apply(init))
+inline fun Animation.animListener(init: AnimListener.() -> Unit) = setAnimationListener(AnimListener().apply(init))
 
 class AnimListener : Animation.AnimationListener {
 

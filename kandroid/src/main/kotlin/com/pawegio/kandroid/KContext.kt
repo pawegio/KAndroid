@@ -66,7 +66,7 @@ inline val Context.displayWidth
 inline val Context.displayHeight
     get() = resources.displayMetrics.heightPixels
 
-fun Context.inflateLayout(@LayoutRes layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false)
+inline fun Context.inflateLayout(@LayoutRes layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false)
         = LayoutInflater.from(this).inflate(layoutResId, parent, attachToRoot)
 
 inline val Context.accessibilityManager
@@ -221,8 +221,8 @@ inline val Context.defaultSharedPreferences
 
 inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
 
-fun Context.isPermissionGranted(permission: String): Boolean =
+inline fun Context.isPermissionGranted(permission: String): Boolean =
         ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
 
-fun Context.arePermissionsGranted(vararg permissions: String): Boolean =
+inline fun Context.arePermissionsGranted(vararg permissions: String): Boolean =
         permissions.all { ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED }

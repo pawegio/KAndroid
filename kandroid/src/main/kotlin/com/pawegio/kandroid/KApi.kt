@@ -18,13 +18,10 @@ package com.pawegio.kandroid
 
 import android.os.Build
 
-private val version: Int
-    get() = Build.VERSION.SDK_INT
-
-fun toApi(toVersion: Int, inclusive: Boolean = false, action: () -> Unit) {
-    if (version < toVersion || (inclusive && version == toVersion)) action()
+inline fun toApi(toVersion: Int, inclusive: Boolean = false, action: () -> Unit) {
+    if (Build.VERSION.SDK_INT < toVersion || (inclusive && Build.VERSION.SDK_INT == toVersion)) action()
 }
 
-fun fromApi(fromVersion: Int, inclusive: Boolean = true, action: () -> Unit) {
-    if (version > fromVersion || (inclusive && version == fromVersion)) action()
+inline fun fromApi(fromVersion: Int, inclusive: Boolean = true, action: () -> Unit) {
+    if (Build.VERSION.SDK_INT > fromVersion || (inclusive && Build.VERSION.SDK_INT == fromVersion)) action()
 }
