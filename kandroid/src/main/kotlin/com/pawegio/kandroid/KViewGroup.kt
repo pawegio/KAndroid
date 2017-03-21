@@ -18,5 +18,5 @@ package com.pawegio.kandroid
 
 import android.view.ViewGroup
 
-val ViewGroup.views
+inline val ViewGroup.views
     get() = (0..childCount - 1).map { getChildAt(it) }

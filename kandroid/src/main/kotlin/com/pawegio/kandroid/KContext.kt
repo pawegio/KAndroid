@@ -60,163 +60,163 @@ import android.view.accessibility.CaptioningManager
 import android.view.inputmethod.InputMethodManager
 import android.view.textservice.TextServicesManager
 
-val Context.displayWidth
+inline val Context.displayWidth
     get() = resources.displayMetrics.widthPixels
 
-val Context.displayHeight
+inline val Context.displayHeight
     get() = resources.displayMetrics.heightPixels
 
 fun Context.inflateLayout(@LayoutRes layoutResId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false)
         = LayoutInflater.from(this).inflate(layoutResId, parent, attachToRoot)
 
-val Context.accessibilityManager
+inline val Context.accessibilityManager
     get() = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager?
 
-val Context.accountManager
+inline val Context.accountManager
     get() = getSystemService(Context.ACCOUNT_SERVICE) as AccountManager?
 
-val Context.activityManager
+inline val Context.activityManager
     get() = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
 
-val Context.alarmManager
+inline val Context.alarmManager
     get() = getSystemService(Context.ALARM_SERVICE) as AlarmManager?
 
-val Context.appWidgetManager
+inline val Context.appWidgetManager
     get() = getSystemService(Context.APPWIDGET_SERVICE) as AppWidgetManager?
 
-val Context.appOpsManager
+inline val Context.appOpsManager
     get() = getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager?
 
-val Context.audioManager
+inline val Context.audioManager
     get() = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
 
-val Context.batteryManager
+inline val Context.batteryManager
     get() = getSystemService(Context.BATTERY_SERVICE) as BatteryManager?
 
-val Context.bluetoothManager
+inline val Context.bluetoothManager
     get() = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager?
 
-val Context.cameraManager
+inline val Context.cameraManager
     get() = getSystemService(Context.CAMERA_SERVICE) as CameraManager?
 
-val Context.captioningManager
+inline val Context.captioningManager
     get() = getSystemService(Context.CAPTIONING_SERVICE) as CaptioningManager?
 
-val Context.clipboardManager
+inline val Context.clipboardManager
     get() = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager?
 
-val Context.connectivityManager
+inline val Context.connectivityManager
     get() = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
 
-val Context.consumerIrManager
+inline val Context.consumerIrManager
     get() = getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager?
 
-val Context.devicePolicyManager
+inline val Context.devicePolicyManager
     get() = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager?
 
-val Context.displayManager
+inline val Context.displayManager
     get() = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager?
 
-val Context.downloadManager
+inline val Context.downloadManager
     get() = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager?
 
-val Context.dropBoxManager
+inline val Context.dropBoxManager
     get() = getSystemService(Context.DROPBOX_SERVICE) as DropBoxManager?
 
-val Context.inputMethodManager
+inline val Context.inputMethodManager
     get() = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
 
-val Context.inputManager
+inline val Context.inputManager
     get() = getSystemService(Context.INPUT_SERVICE) as InputManager?
 
-val Context.jobScheduler
+inline val Context.jobScheduler
     get() = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler?
 
-val Context.keyguardManager
+inline val Context.keyguardManager
     get() = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager?
 
-val Context.launcherApps
+inline val Context.launcherApps
     get() = getSystemService(Context.LAUNCHER_APPS_SERVICE) as LauncherApps?
 
-val Context.layoutInflater
+inline val Context.layoutInflater
     get() = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater?
 
-val Context.locationManager
+inline val Context.locationManager
     get() = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
 
-val Context.mediaProjectionManager
+inline val Context.mediaProjectionManager
     get() = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager?
 
-val Context.mediaRouter
+inline val Context.mediaRouter
     get() = getSystemService(Context.MEDIA_ROUTER_SERVICE) as MediaRouter?
 
-val Context.mediaSessionManager
+inline val Context.mediaSessionManager
     get() = getSystemService(Context.MEDIA_SESSION_SERVICE) as MediaSessionManager?
 
-val Context.nfcManager
+inline val Context.nfcManager
     get() = getSystemService(Context.NFC_SERVICE) as NfcManager?
 
-val Context.notificationManager
+inline val Context.notificationManager
     get() = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
 
-val Context.nsdManager
+inline val Context.nsdManager
     get() = getSystemService(Context.NSD_SERVICE) as NsdManager?
 
-val Context.powerManager
+inline val Context.powerManager
     get() = getSystemService(Context.POWER_SERVICE) as PowerManager?
 
-val Context.printManager
+inline val Context.printManager
     get() = getSystemService(Context.PRINT_SERVICE) as PrintManager?
 
-val Context.restrictionsManager
+inline val Context.restrictionsManager
     get() = getSystemService(Context.RESTRICTIONS_SERVICE) as RestrictionsManager?
 
-val Context.searchManager
+inline val Context.searchManager
     get() = getSystemService(Context.SEARCH_SERVICE) as SearchManager?
 
-val Context.sensorManager
+inline val Context.sensorManager
     get() = getSystemService(Context.SENSOR_SERVICE) as SensorManager?
 
-val Context.storageManager
+inline val Context.storageManager
     get() = getSystemService(Context.STORAGE_SERVICE) as StorageManager?
 
-val Context.telecomManager
+inline val Context.telecomManager
     get() = getSystemService(Context.TELECOM_SERVICE) as TelecomManager?
 
-val Context.telephonyManager
+inline val Context.telephonyManager
     get() = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager?
 
-val Context.textServicesManager
+inline val Context.textServicesManager
     get() = getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE) as TextServicesManager?
 
-val Context.tvInputManager
+inline val Context.tvInputManager
     get() = getSystemService(Context.TV_INPUT_SERVICE) as TvInputManager?
 
-val Context.uiModeManager
+inline val Context.uiModeManager
     get() = getSystemService(Context.UI_MODE_SERVICE) as UiModeManager?
 
-val Context.usbManager
+inline val Context.usbManager
     get() = getSystemService(Context.USB_SERVICE) as UsbManager?
 
-val Context.userManager
+inline val Context.userManager
     get() = getSystemService(Context.USER_SERVICE) as UserManager?
 
-val Context.vibrator
+inline val Context.vibrator
     get() = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator?
 
-val Context.wallpaperManager
+inline val Context.wallpaperManager
     get() = getSystemService(Context.WALLPAPER_SERVICE) as WallpaperManager?
 
-val Context.wifiP2pManager
+inline val Context.wifiP2pManager
     get() = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager?
 
-val Context.wifiManager
+inline val Context.wifiManager
     get() = getSystemService(Context.WIFI_SERVICE) as WifiManager?
 
-val Context.windowManager
+inline val Context.windowManager
     get() = getSystemService(Context.WINDOW_SERVICE) as WindowManager?
 
-val Context.defaultSharedPreferences
+inline val Context.defaultSharedPreferences
     get() = PreferenceManager.getDefaultSharedPreferences(this)
 
 inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
