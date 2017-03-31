@@ -21,6 +21,7 @@ import android.support.annotation.AnimRes
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
+@Suppress("NOTHING_TO_INLINE")
 inline fun Context.loadAnimation(@AnimRes id: Int) = AnimationUtils.loadAnimation(applicationContext, id)
 
 inline fun Animation.animListener(init: AnimListener.() -> Unit) = setAnimationListener(AnimListener().apply(init))
