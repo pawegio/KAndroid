@@ -18,5 +18,12 @@ package com.pawegio.kandroid
 
 import android.support.annotation.IdRes
 import android.view.View
+import android.view.View.*
 
 inline fun <reified T : View> View.find(@IdRes id: Int): T = findViewById(id) as T
+
+var View.visible: Boolean
+    get() = visibility == VISIBLE
+    set(value) {
+        visibility = if (value) VISIBLE else GONE
+    }
