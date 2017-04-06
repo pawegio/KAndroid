@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:Suppress("NOTHING_TO_INLINE")
+
 package com.pawegio.kandroid
 
 import android.support.annotation.IdRes
@@ -22,8 +24,22 @@ import android.view.View.*
 
 inline fun <reified T : View> View.find(@IdRes id: Int): T = findViewById(id) as T
 
-var View.visible: Boolean
+var View.visible
     get() = visibility == VISIBLE
     set(value) {
         visibility = if (value) VISIBLE else GONE
     }
+
+var View.invisible
+    get() = visibility != VISIBLE
+    set(value) {
+        visibility = if (value) GONE else VISIBLE
+    }
+
+inline fun View.hide(gone: Boolean = true) {
+    visibility = if (gone) GONE else INVISIBLE
+}
+
+inline fun View.show() {
+    visibility = VISIBLE
+}
