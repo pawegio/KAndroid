@@ -30,12 +30,6 @@ var View.visible
         visibility = if (value) VISIBLE else GONE
     }
 
-var View.invisible
-    get() = visibility != VISIBLE
-    set(value) {
-        visibility = if (value) GONE else VISIBLE
-    }
-
 inline fun View.hide(gone: Boolean = true) {
     visibility = if (gone) GONE else INVISIBLE
 }
