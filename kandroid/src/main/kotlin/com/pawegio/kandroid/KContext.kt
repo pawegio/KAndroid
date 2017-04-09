@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:Suppress("NOTHING_TO_INLINE")
+
 package com.pawegio.kandroid
 
 import android.accounts.AccountManager
@@ -221,10 +223,8 @@ inline val Context.defaultSharedPreferences
 
 inline fun <reified T : Any> Context.startActivity() = startActivity(IntentFor<T>(this))
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun Context.isPermissionGranted(permission: String): Boolean =
         ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun Context.arePermissionsGranted(vararg permissions: String): Boolean =
         permissions.all { ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED }
