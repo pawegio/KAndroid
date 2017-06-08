@@ -38,14 +38,14 @@ inline fun View.show() {
     visibility = VISIBLE
 }
 
-fun View.setHeight(height: Int) {
+inline fun View.setWidth(width: Int) {
     val params = layoutParams
-    params.height = height
+    params.width = width
     layoutParams = params
 }
 
-fun View.setWidth(width: Int) {
+inline fun View.setHeight(height: Int) {
     val params = layoutParams
-    params.width = width
+    params.height = height
     layoutParams = params
 }
