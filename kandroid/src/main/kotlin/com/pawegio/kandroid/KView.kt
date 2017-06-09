@@ -49,3 +49,10 @@ inline fun View.setHeight(height: Int) {
     params.height = height
     layoutParams = params
 }
+
+inline fun View.setSize(width:Int, height:Int) {
+    val params = layoutParams
+    params.width = width
+    params.height = height
+    layoutParams = params
+}
