@@ -19,6 +19,8 @@
 package com.pawegio.kandroid
 
 import android.app.Fragment
+import android.preference.Preference
+import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
 import android.support.annotation.StringRes
 import android.support.v4.app.Fragment as SupportFragment
@@ -42,3 +44,5 @@ inline fun SupportFragment.longToast(text: CharSequence) = activity.longToast(te
 inline fun SupportFragment.toast(@StringRes resId: Int): Unit = activity.toast(resId)
 
 inline fun SupportFragment.longToast(@StringRes resId: Int): Unit = activity.longToast(resId)
+
+inline fun <reified T : Preference> PreferenceFragment.findPref(key: String): T = findPreference(key) as T
