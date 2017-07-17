@@ -24,6 +24,18 @@ inline fun TextView.textWatcher(init: KTextWatcher.() -> Unit) = addTextChangedL
 
 class KTextWatcher : TextWatcher {
 
+    val TextView.isEmpty
+        get() = text.isEmpty()
+
+    val TextView.isNotEmpty
+        get() = text.isNotEmpty()
+
+    val TextView.isBlank
+        get() = text.isBlank()
+
+    val TextView.isNotBlank
+        get() = text.isNotBlank()
+
     private var _beforeTextChanged: ((CharSequence?, Int, Int, Int) -> Unit)? = null
     private var _onTextChanged: ((CharSequence?, Int, Int, Int) -> Unit)? = null
     private var _afterTextChanged: ((Editable?) -> Unit)? = null
