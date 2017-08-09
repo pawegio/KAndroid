@@ -25,7 +25,10 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.annotation.StringRes
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
+import android.support.v4.app.Fragment as SupportFragment
+import android.support.v7.app.AppCompatActivity as SupportActivity
 
 inline fun <reified T : View> Activity.find(@IdRes id: Int): T = findViewById(id) as T
 
@@ -49,4 +52,14 @@ inline fun Activity.lockCurrentScreenOrientation() {
 
 inline fun Activity.unlockScreenOrientation() {
     requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR
+}
+
+inline fun Activity.keepScreenOn() {
+    window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+}
+
+inline fun SupportActivity.replaceFragment(@IdRes id: Int, fragment: SupportFragment) {
+    val manager = supportFragmentManager.beginTransaction()
+    manager.replace(id, fragment)
+    manager.commit()
 }

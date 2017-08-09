@@ -18,7 +18,10 @@
 
 package com.pawegio.kandroid
 
+import android.annotation.TargetApi
+import android.app.Activity
 import android.app.Fragment
+import android.os.Build
 import android.preference.Preference
 import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
@@ -46,3 +49,11 @@ inline fun SupportFragment.toast(@StringRes resId: Int): Unit = activity.toast(r
 inline fun SupportFragment.longToast(@StringRes resId: Int): Unit = activity.longToast(resId)
 
 inline fun <reified T : Preference> PreferenceFragment.findPref(key: String): T = findPreference(key) as T
+
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+fun Fragment.getHostingActivity(): Activity? {
+    if (activity != null) {
+        return activity
+    }
+    return parentFragment?.getHostingActivity()
+}
