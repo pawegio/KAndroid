@@ -22,7 +22,8 @@ import android.support.annotation.IdRes
 import android.view.View
 import android.view.View.*
 
-inline fun <reified T : View> View.find(@IdRes id: Int): T = findViewById(id) as T
+@Deprecated("Use findViewById() instead", ReplaceWith("findViewById()"))
+inline fun <reified T : View> View.find(@IdRes id: Int): T = findViewById(id)
 
 var View.visible
     get() = visibility == VISIBLE
