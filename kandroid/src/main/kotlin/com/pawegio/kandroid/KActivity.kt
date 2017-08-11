@@ -28,7 +28,7 @@ import android.view.View
 import android.widget.Toast
 
 @Deprecated("Use findViewById() instead", ReplaceWith("findViewById()"))
-inline fun <reified T : View> Activity.find(@IdRes id: Int): T = findViewById(id) as T
+inline fun <reified T : View> Activity.find(@IdRes id: Int): T = findViewById(id)
 
 inline fun Activity.toast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 
