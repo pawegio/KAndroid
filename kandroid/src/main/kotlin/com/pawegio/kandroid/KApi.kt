@@ -25,3 +25,11 @@ inline fun toApi(toVersion: Int, inclusive: Boolean = false, action: () -> Unit)
 inline fun fromApi(fromVersion: Int, inclusive: Boolean = true, action: () -> Unit) {
     if (Build.VERSION.SDK_INT > fromVersion || (inclusive && Build.VERSION.SDK_INT == fromVersion)) action()
 }
+
+inline fun fromLollipopAbove(action: () -> Unit) {
+    fromApi(Build.VERSION_CODES.LOLLIPOP, true, action)
+}
+
+inline fun fromMarshMellowAbove(action: () -> Unit) {
+    fromApi(Build.VERSION_CODES.M, true, action)
+}

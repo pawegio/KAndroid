@@ -51,9 +51,13 @@ inline fun View.setHeight(height: Int) {
     layoutParams = params
 }
 
-inline fun View.setSize(width:Int, height:Int) {
+inline fun View.setSize(width: Int, height: Int) {
     val params = layoutParams
     params.width = width
     params.height = height
     layoutParams = params
 }
+
+inline fun View.setPadding(paddingLeftRight: Int, paddingTopBottom: Int) = setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom)
+
+inline fun View.setPadding(padding: Int) = setPadding(padding, padding)
