@@ -215,7 +215,7 @@ inline val Context.wifiP2pManager
     get() = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager?
 
 inline val Context.wifiManager
-    get() = getSystemService(Context.WIFI_SERVICE) as WifiManager?
+    get() = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager?
 
 inline val Context.windowManager
     get() = getSystemService(Context.WINDOW_SERVICE) as WindowManager?
