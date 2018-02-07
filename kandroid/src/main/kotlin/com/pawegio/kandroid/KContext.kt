@@ -51,6 +51,7 @@ import android.os.storage.StorageManager
 import android.preference.PreferenceManager
 import android.print.PrintManager
 import android.support.annotation.LayoutRes
+import android.support.annotation.StringRes
 import android.support.v4.content.ContextCompat
 import android.telecom.TelecomManager
 import android.telephony.TelephonyManager
@@ -61,6 +62,7 @@ import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.CaptioningManager
 import android.view.inputmethod.InputMethodManager
 import android.view.textservice.TextServicesManager
+import android.widget.Toast
 
 inline val Context.displayWidth
     get() = resources.displayMetrics.widthPixels
@@ -228,3 +230,11 @@ inline fun Context.isPermissionGranted(permission: String): Boolean =
 
 inline fun Context.arePermissionsGranted(vararg permissions: String): Boolean =
         permissions.all { ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED }
+
+inline fun Context.toast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+
+inline fun Context.longToast(text: CharSequence): Unit = Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+
+inline fun Context.toast(@StringRes resId: Int): Unit = Toast.makeText(this, resId, Toast.LENGTH_SHORT).show()
+
+inline fun Context.longToast(@StringRes resId: Int): Unit = Toast.makeText(this, resId, Toast.LENGTH_LONG).show()
