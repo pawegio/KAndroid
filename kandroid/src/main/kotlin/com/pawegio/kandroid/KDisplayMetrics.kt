@@ -31,9 +31,9 @@ inline fun Fragment.dp(value: Int): Int = activity.dp(value)
 
 inline fun Fragment.sp(value: Int): Int = activity.sp(value)
 
-inline fun SupportFragment.dp(value: Int): Int = activity.dp(value)
+inline fun SupportFragment.dp(value: Int): Int? = activity?.dp(value)
 
-inline fun SupportFragment.sp(value: Int): Int = activity.sp(value)
+inline fun SupportFragment.sp(value: Int): Int? = activity?.sp(value)
 
 inline fun View.dp(value: Int): Int = context.dp(value)
 
