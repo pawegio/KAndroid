@@ -5,7 +5,7 @@ android:
     - tools
     - build-tools-27.0.3
     - android-27
-    - sys-img-armeabi-v7a-android-27
+    - sys-img-armeabi-v7a-android-26
 
 before_script:
   - echo no | android create avd --force -n test -t android-26 --abi armeabi-v7a
