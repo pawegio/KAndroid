@@ -20,8 +20,8 @@ import android.os.Environment
 import android.os.Environment.MEDIA_MOUNTED
 import android.os.Environment.MEDIA_MOUNTED_READ_ONLY
 
-inline val Environment.isExternalStorageWritable
+inline val isExternalStorageWritable
     get() = Environment.getExternalStorageState() == MEDIA_MOUNTED
 
-inline val Environment.isExternalStorageReadable
+inline val isExternalStorageReadable
     get() = Environment.getExternalStorageState() == MEDIA_MOUNTED_READ_ONLY || isExternalStorageWritable
