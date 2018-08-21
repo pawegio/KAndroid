@@ -16,7 +16,7 @@
 
 package com.pawegio.kandroid
 
-import android.support.test.annotation.UiThreadTest
+import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.view.View
 import android.view.ViewGroup
@@ -30,9 +30,10 @@ import com.pawegio.kandroid.test.R
 @RunWith(AndroidJUnit4::class)
 class ContextTest {
 
+    private val instrumentation = InstrumentationRegistry.getInstrumentation()
+
     @Test
-    @UiThreadTest
-    fun shortToastTest() {
+    fun shortToastTest() = instrumentation.runOnMainSync {
         val toast = context.toast("Hello short toast")
         assertEquals(View.VISIBLE, toast.view.visibility)
         assertEquals(Toast.LENGTH_SHORT, toast.duration)
@@ -40,8 +41,7 @@ class ContextTest {
     }
 
     @Test
-    @UiThreadTest
-    fun shortToastWithResTest() {
+    fun shortToastWithResTest() = instrumentation.runOnMainSync {
         val text = context.getString(R.string.toast_test_text)
         val toast = context.toast(text)
         assertEquals(View.VISIBLE, toast.view.visibility)
@@ -50,8 +50,7 @@ class ContextTest {
     }
 
     @Test
-    @UiThreadTest
-    fun longToastTest() {
+    fun longToastTest() = instrumentation.runOnMainSync {
         val toast = context.longToast("Hello long toast")
         assertEquals(View.VISIBLE, toast.view.visibility)
         assertEquals(Toast.LENGTH_LONG, toast.duration)
@@ -59,8 +58,7 @@ class ContextTest {
     }
 
     @Test
-    @UiThreadTest
-    fun longToastTestWithResTest() {
+    fun longToastTestWithResTest() = instrumentation.runOnMainSync {
         val text = context.getString(R.string.toast_long_test_text)
         val toast = context.longToast(text)
         assertEquals(View.VISIBLE, toast.view.visibility)
