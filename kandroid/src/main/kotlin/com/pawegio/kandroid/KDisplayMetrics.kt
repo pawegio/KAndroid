@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("NOTHING_TO_INLINE")
+@file:Suppress("NOTHING_TO_INLINE", "DeprecatedCallableAddReplaceWith")
 
 package com.pawegio.kandroid
 
@@ -27,8 +27,10 @@ inline fun Context.dp(value: Int): Int = (value * resources.displayMetrics.densi
 
 inline fun Context.sp(value: Int): Int = (value * resources.displayMetrics.scaledDensity).toInt()
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.dp(value: Int): Int = activity.dp(value)
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.sp(value: Int): Int = activity.sp(value)
 
 inline fun SupportFragment.dp(value: Int): Int? = activity?.dp(value)

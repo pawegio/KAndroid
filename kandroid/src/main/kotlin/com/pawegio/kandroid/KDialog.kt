@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:Suppress("DeprecatedCallableAddReplaceWith")
+
 package com.pawegio.kandroid
 
 import android.app.Fragment
@@ -28,6 +30,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.ListAdapter
 
+@Deprecated("android.app.Fragment is Deprecated")
 fun Fragment.alert(
         message: String,
         title: String? = null,
@@ -44,6 +47,7 @@ fun Context.alert(
     if (init != null) init()
 }
 
+@Deprecated("android.app.Fragment is Deprecated")
 fun Fragment.alert(
         @StringRes message: Int,
         @StringRes title: Int? = null,
@@ -60,58 +64,68 @@ fun Context.alert(
     if (init != null) init()
 }
 
+@Deprecated("android.app.Fragment is Deprecated")
 fun Fragment.alert(init: KAlertDialogBuilder.() -> Unit): KAlertDialogBuilder = activity.alert(init)
 
 fun Context.alert(init: KAlertDialogBuilder.() -> Unit) = KAlertDialogBuilder(this).apply { init() }
 
+@Deprecated("android.app.Fragment and android.app.ProgressDialog are Deprecated")
 fun Fragment.progressDialog(
         @StringRes message: Int? = null,
         @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.progressDialog(message, title, init)
 
+@Deprecated("android.app.ProgressDialog is Deprecated")
 fun Context.progressDialog(
         @StringRes message: Int? = null,
         @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(false, message?.let { getString(it) }, title?.let { getString(it) }, init)
 
+@Deprecated("android.app.Fragment and android.app.ProgressDialog are Deprecated")
 fun Fragment.indeterminateProgressDialog(
         @StringRes message: Int? = null,
         @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.progressDialog(message, title, init)
 
+@Deprecated("android.app.ProgressDialog is Deprecated")
 fun Context.indeterminateProgressDialog(
         @StringRes message: Int? = null,
         @StringRes title: Int? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(true, message?.let { getString(it) }, title?.let { getString(it) }, init)
 
+@Deprecated("android.app.Fragment and android.app.ProgressDialog are Deprecated")
 fun Fragment.progressDialog(
         message: String? = null,
         title: String? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.progressDialog(message, title, init)
 
+@Deprecated("android.app.ProgressDialog is Deprecated")
 fun Context.progressDialog(
         message: String? = null,
         title: String? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(false, message, title, init)
 
+@Deprecated("android.app.Fragment and android.app.ProgressDialog are Deprecated")
 fun Fragment.indeterminateProgressDialog(
         message: String? = null,
         title: String? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = activity.indeterminateProgressDialog(message, title, init)
 
+@Deprecated("android.app.ProgressDialog is Deprecated")
 fun Context.indeterminateProgressDialog(
         message: String? = null,
         title: String? = null,
         init: (ProgressDialog.() -> Unit)? = null
 ) = progressDialog(true, message, title, init)
 
+@Deprecated("android.app.ProgressDialog is Deprecated")
 private fun Context.progressDialog(
         indeterminate: Boolean,
         message: String? = null,
@@ -126,6 +140,7 @@ private fun Context.progressDialog(
     show()
 }
 
+@Deprecated("android.app.Fragment is Deprecated")
 fun Fragment.selector(
         title: CharSequence? = null,
         items: List<CharSequence>,

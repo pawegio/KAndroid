@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("NOTHING_TO_INLINE")
+@file:Suppress("NOTHING_TO_INLINE", "DeprecatedCallableAddReplaceWith")
 
 package com.pawegio.kandroid
 
@@ -26,14 +26,19 @@ import android.support.annotation.StringRes
 import android.widget.Toast
 import android.support.v4.app.Fragment as SupportFragment
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.getDefaultSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(activity)
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.toast(text: CharSequence): Toast = activity.toast(text)
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.longToast(text: CharSequence): Toast = activity.longToast(text)
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.toast(@StringRes resId: Int): Toast = activity.toast(resId)
 
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Fragment.longToast(@StringRes resId: Int): Toast = activity.longToast(resId)
 
 inline fun SupportFragment.getDefaultSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(activity)
@@ -46,4 +51,5 @@ inline fun SupportFragment.toast(@StringRes resId: Int): Toast? = activity?.toas
 
 inline fun SupportFragment.longToast(@StringRes resId: Int): Toast? = activity?.longToast(resId)
 
+@Deprecated("android.preference.PreferenceFragment is Deprecated")
 inline fun <reified T : Preference> PreferenceFragment.findPref(key: String): T = findPreference(key) as T
