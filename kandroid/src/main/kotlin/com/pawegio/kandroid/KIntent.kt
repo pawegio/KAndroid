@@ -31,6 +31,8 @@ inline fun Intent.start(context: Context) = context.startActivity(this)
 
 inline fun Intent.startForResult(activity: Activity, requestCode: Int) = activity.startActivityForResult(this, requestCode)
 
+@Suppress("DeprecatedCallableAddReplaceWith")
+@Deprecated("android.app.Fragment is Deprecated")
 inline fun Intent.startForResult(fragment: Fragment, requestCode: Int) = fragment.startActivityForResult(this, requestCode)
 
 inline fun WebIntent(url: String): Intent =
