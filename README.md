@@ -10,12 +10,14 @@ Download
 
 Download latest version with Gradle:
 ```groovy
-repositories {
-    jcenter()
+allprojects { 
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
-    compile 'com.pawegio.kandroid:kandroid:0.8.8@aar'
+    implementation 'com.github.pawegio:KAndroid:0.8.7@aar'
 }
 ```
 
