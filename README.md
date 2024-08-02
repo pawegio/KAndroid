@@ -9,6 +9,7 @@ Download
 --------
 
 Download latest version with Gradle:
+Groovy:
 ```groovy
 allprojects { 
     repositories {
@@ -16,6 +17,27 @@ allprojects {
     }
 }
 
+dependencies {
+    implementation 'com.github.pawegio:KAndroid:0.8.7@aar'
+}
+```
+Kotlin:
+1. In `settings.gradle.kts` file:
+```kotlin
+pluginManagement {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+2. In `build.gradle.kts` file
+```
 dependencies {
     implementation 'com.github.pawegio:KAndroid:0.8.7@aar'
 }
